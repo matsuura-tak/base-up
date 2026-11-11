@@ -1,0 +1,1447 @@
+openapi: 3.1.0
+info:
+  title: LOGIC ARCADE Client Domain & Test Seam Contract
+  version: 1.0.0
+  summary: ブラウザ単体完結アーケード型エンジニア思考ゲーム＆5軸思考力診断カルテの機械可読データ・テスト契約
+  description: >-
+    機能 001-arcade-core はバックエンド API・DB・認証を持たず利用者ブラウザ単体で完結するため、
+    HTTP エンドポイント（paths）は空オブジェクト（0件）とする。
+    本契約の components.schemas から openapi-typescript によりビルド時に TypeScript 型定義を自動生成し、
+    全19ステージ定義、localStorage 永続化状態（logic_arcade_state_v1）、5軸思考力診断カルテ、
+    PRD 15章の全9イベント、およびヘッドレス受け入れテスト用 window.__ARCADE_TEST_API__ の型整合を機械的に保証する。
+  contact:
+    name: LOGIC ARCADE Tech Lead
+    url: https://github.com/matsuura-tak/base-up
+  license:
+    name: Proprietary
+    identifier: LicenseRef-Proprietary
+servers:
+  - url: /
+    description: 同一オリジン静的配信 SPA（HTTP API 通信 0件）
+paths: {}
+components:
+  schemas:
+    Locale:
+      type: string
+      description: 表示言語コード（既定値は ja）
+      enum:
+        - ja
+        - en
+
+    LocalizedText:
+      type: object
+      description: 日英完全対訳テキスト（空文字列禁止）
+      additionalProperties: false
+      required:
+        - ja
+        - en
+      properties:
+        ja:
+          type: string
+          minLength: 1
+        en:
+          type: string
+          minLength: 1
+
+    RouteId:
+      type: string
+      description: SPA ルート識別子（未定義パス時は notFound）
+      enum:
+        - lobby
+        - combinator
+        - fermi
+        - diagnostic
+        - notFound
+
+    ResolvedRoute:
+      type: object
+      description: URL パスおよび ?stage= クエリの解決結果
+      additionalProperties: false
+      required:
+        - route
+        - stageId
+        - stageFallbackNotice
+        - canonicalPath
+      properties:
+        route:
+          $ref: "#/components/schemas/RouteId"
+        stageId:
+          type:
+            - integer
+            - "null"
+          minimum: 1
+          maximum: 10
+        stageFallbackNotice:
+          type: boolean
+          description: 範囲外または非整数の ?stage= が指定され STAGE 1 に安全補正されたとき true
+        canonicalPath:
+          type: string
+          minLength: 1
+
+    ClientErrorNoticeType:
+      type: string
+      description: クライアント境界エラー種別（design/001-arcade-core.md 第7章の文言キーと1対1対応）
+      enum:
+        - STORAGE_UNAVAILABLE
+        - CLIPBOARD_DENIED
+        - STAGE_QUERY_OUT_OF_RANGE
+        - ROUTE_NOT_FOUND
+        - RENDER_RUNTIME_ERROR
+
+    CombinatorConditionType:
+      type: string
+      description: モード1モジュールのステップ実行前判定条件種別
+      enum:
+        - ALWAYS
+        - IF_OUTPUT_GTE
+        - IF_HEAT_GTE
+        - IF_HEAT_LTE
+        - IF_ENERGY_GTE
+        - IF_ENERGY_LTE
+
+    CombinatorCondition:
+      type: object
+      description: モード1モジュールの発動条件（ステップ実行前の状態に対して評価する）
+      additionalProperties: false
+      required:
+        - type
+        - threshold
+        - label
+      properties:
+        type:
+          $ref: "#/components/schemas/CombinatorConditionType"
+        threshold:
+          type:
+            - integer
+            - "null"
+        label:
+          $ref: "#/components/schemas/LocalizedText"
+
+    CombinatorEffectOp:
+      type: string
+      description: モード1モジュールの基本性能演算種別
+      enum:
+        - ADD
+        - MUL
+        - HEAT_TO_OUT
+        - ENERGY_TO_OUT
+        - ADD_SHIELD
+
+    CombinatorEffect:
+      type: object
+      description: モード1モジュールの基本性能定義
+      additionalProperties: false
+      required:
+        - op
+        - value
+        - label
+      properties:
+        op:
+          $ref: "#/components/schemas/CombinatorEffectOp"
+        value:
+          type: integer
+        label:
+          $ref: "#/components/schemas/LocalizedText"
+
+    CombinatorModule:
+      type: object
+      description: モード1の提示モジュールカード（4属性：基本性能・エネルギーコスト・副作用・発動条件）
+      additionalProperties: false
+      required:
+        - id
+        - name
+        - energyDelta
+        - sideEffectDelta
+        - sideEffectLabel
+        - condition
+        - effect
+      properties:
+        id:
+          type: string
+          minLength: 1
+        name:
+          $ref: "#/components/schemas/LocalizedText"
+        energyDelta:
+          type: integer
+          description: エネルギー増減値（負数は消費コスト、正数は回復・充填）
+        sideEffectDelta:
+          type: integer
+          description: 副作用（HEAT）増減値（正数は発熱加算、負数は冷却減算、下限 0）
+        sideEffectLabel:
+          $ref: "#/components/schemas/LocalizedText"
+        condition:
+          $ref: "#/components/schemas/CombinatorCondition"
+        effect:
+          $ref: "#/components/schemas/CombinatorEffect"
+
+    CombinatorStageDefinition:
+      type: object
+      description: モード1『3-ACT COMBINATOR』のステージ定義（全10ステージ：1..10）
+      additionalProperties: false
+      required:
+        - stageId
+        - title
+        - initialEnergy
+        - initialOutput
+        - initialSideEffect
+        - targetOutput
+        - targetConditionText
+        - overloadLimit
+        - overloadLimitText
+        - modules
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 10
+        title:
+          $ref: "#/components/schemas/LocalizedText"
+        initialEnergy:
+          type: integer
+          minimum: 0
+        initialOutput:
+          type: integer
+          minimum: 0
+        initialSideEffect:
+          type: integer
+          minimum: 0
+        targetOutput:
+          type: integer
+          minimum: 1
+        targetConditionText:
+          $ref: "#/components/schemas/LocalizedText"
+        overloadLimit:
+          type: integer
+          minimum: 1
+        overloadLimitText:
+          $ref: "#/components/schemas/LocalizedText"
+        modules:
+          type: array
+          minItems: 5
+          maxItems: 7
+          items:
+            $ref: "#/components/schemas/CombinatorModule"
+
+    CombinatorRunStatus:
+      type: string
+      description: モード1のシミュレーション状態列挙値
+      enum:
+        - IDLE
+        - STEPPING
+        - RUNNING
+        - STAGE CLEAR
+        - CRASHED
+        - FAILED
+
+    CombinatorFailureLocation:
+      type: string
+      description: モード1失敗発生箇所（CRASHED 時は STEP 1..3、FAILED 時は FINAL CHECK）
+      enum:
+        - STEP 1
+        - STEP 2
+        - STEP 3
+        - FINAL CHECK
+
+    CombinatorFailureReason:
+      type: string
+      description: モード1失敗原因種別
+      enum:
+        - ENERGY_DEPLETED
+        - OVERLOAD_EXCEEDED
+        - TARGET_UNMET
+
+    CombinatorDebugLog:
+      type: object
+      description: モード1失敗時の構造化デバッグログ（AC-6 の3項目に対応）
+      additionalProperties: false
+      required:
+        - location
+        - reason
+        - expectedValue
+        - actualValue
+        - expectedText
+        - actualText
+      properties:
+        location:
+          $ref: "#/components/schemas/CombinatorFailureLocation"
+        reason:
+          $ref: "#/components/schemas/CombinatorFailureReason"
+        expectedValue:
+          type: number
+        actualValue:
+          type: number
+        expectedText:
+          $ref: "#/components/schemas/LocalizedText"
+        actualText:
+          $ref: "#/components/schemas/LocalizedText"
+
+    FermiTier:
+      type: string
+      description: モード2難易度区分（1..3=beginner, 4..6=intermediate, 7..9=advanced）
+      enum:
+        - beginner
+        - intermediate
+        - advanced
+
+    FermiHypothesisCard:
+      type: object
+      description: モード2の各スロットに提示される仮説パラメータカード
+      additionalProperties: false
+      required:
+        - id
+        - label
+        - displayValue
+        - numericValue
+        - isTrap
+        - trapReason
+      properties:
+        id:
+          type: string
+          minLength: 1
+        label:
+          $ref: "#/components/schemas/LocalizedText"
+        displayValue:
+          $ref: "#/components/schemas/LocalizedText"
+        numericValue:
+          type: number
+          exclusiveMinimum: 0
+        isTrap:
+          type: boolean
+        trapReason:
+          oneOf:
+            - $ref: "#/components/schemas/LocalizedText"
+            - type: "null"
+
+    FermiHypothesisSlot:
+      type: object
+      description: モード2の3段階因数分解スロット（ACT 1, ACT 2, ACT 3）
+      additionalProperties: false
+      required:
+        - actIndex
+        - slotCode
+        - roleLabel
+        - cards
+      properties:
+        actIndex:
+          type: integer
+          minimum: 1
+          maximum: 3
+        slotCode:
+          type: string
+          enum:
+            - ACT 1
+            - ACT 2
+            - ACT 3
+        roleLabel:
+          $ref: "#/components/schemas/LocalizedText"
+        cards:
+          type: array
+          minItems: 3
+          maxItems: 4
+          items:
+            $ref: "#/components/schemas/FermiHypothesisCard"
+
+    FermiStageDefinition:
+      type: object
+      description: モード2『FERMI BLASTER』のステージ定義（全9ステージ：1..9）
+      additionalProperties: false
+      required:
+        - stageId
+        - tier
+        - question
+        - unitLabel
+        - baselineValue
+        - baselineFormula
+        - baselineBreakdownText
+        - slots
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 9
+        tier:
+          $ref: "#/components/schemas/FermiTier"
+        question:
+          $ref: "#/components/schemas/LocalizedText"
+        unitLabel:
+          $ref: "#/components/schemas/LocalizedText"
+        baselineValue:
+          type: number
+          exclusiveMinimum: 0
+        baselineFormula:
+          $ref: "#/components/schemas/LocalizedText"
+        baselineBreakdownText:
+          $ref: "#/components/schemas/LocalizedText"
+        slots:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            $ref: "#/components/schemas/FermiHypothesisSlot"
+
+    FermiJudgment:
+      type: string
+      description: モード2の4段階オーダー判定結果（AC-8）
+      enum:
+        - PERFECT ORDER
+        - GOOD RANGE
+        - OVERKILL
+        - UNDERESTIMATE
+
+    FermiRunStatus:
+      type: string
+      description: モード2のシミュレーション状態列挙値
+      enum:
+        - IDLE
+        - RUNNING
+        - PERFECT ORDER
+        - GOOD RANGE
+        - OVERKILL
+        - UNDERESTIMATE
+
+    FermiTrapNote:
+      type: object
+      description: モード2結果解説パネルに表示する罠カード注意項目（AC-9）
+      additionalProperties: false
+      required:
+        - cardId
+        - actIndex
+        - cardLabel
+        - reason
+        - triggeredInCurrentRun
+      properties:
+        cardId:
+          type: string
+          minLength: 1
+        actIndex:
+          type: integer
+          minimum: 1
+          maximum: 3
+        cardLabel:
+          $ref: "#/components/schemas/LocalizedText"
+        reason:
+          $ref: "#/components/schemas/LocalizedText"
+        triggeredInCurrentRun:
+          type: boolean
+
+    FermiExplanation:
+      type: object
+      description: モード2 FIRE 実行後の構造化解説データ（AC-9 の3項目＋再試行案内に対応）
+      additionalProperties: false
+      required:
+        - estimateValue
+        - baselineValue
+        - logError
+        - judgment
+        - trapTriggeredCount
+        - baselineFormula
+        - baselineBreakdownText
+        - trapNotes
+        - showRetryHint
+      properties:
+        estimateValue:
+          type: number
+          exclusiveMinimum: 0
+        baselineValue:
+          type: number
+          exclusiveMinimum: 0
+        logError:
+          type: number
+          description: log10(estimateValue / baselineValue)
+        judgment:
+          $ref: "#/components/schemas/FermiJudgment"
+        trapTriggeredCount:
+          type: integer
+          minimum: 0
+          maximum: 3
+        baselineFormula:
+          $ref: "#/components/schemas/LocalizedText"
+        baselineBreakdownText:
+          $ref: "#/components/schemas/LocalizedText"
+        trapNotes:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/FermiTrapNote"
+        showRetryHint:
+          type: boolean
+
+    CombinatorStageRecord:
+      type: object
+      description: モード1各ステージの公式 RUN プレイ履歴レコード（STEP は加算しない）
+      additionalProperties: false
+      required:
+        - stageId
+        - cleared
+        - runAttemptsBeforeFirstClear
+        - totalRunAttempts
+        - bestScore
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 10
+        cleared:
+          type: boolean
+        runAttemptsBeforeFirstClear:
+          type:
+            - integer
+            - "null"
+          minimum: 1
+          description: 初回 STAGE CLEAR 達成時の当該ステージ累積 RUN 回数 a_s（確定後は上書きしない）
+        totalRunAttempts:
+          type: integer
+          minimum: 0
+        bestScore:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+
+    FermiBestJudgment:
+      type: string
+      description: モード2クリア済みステージの最高判定（PERFECT_ORDER=1.0, GOOD_RANGE=0.6）
+      enum:
+        - PERFECT_ORDER
+        - GOOD_RANGE
+
+    FermiStageRecord:
+      type: object
+      description: モード2各ステージの公式 FIRE プレイ履歴レコード
+      additionalProperties: false
+      required:
+        - stageId
+        - cleared
+        - bestJudgment
+        - totalFireAttempts
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 9
+        cleared:
+          type: boolean
+        bestJudgment:
+          oneOf:
+            - $ref: "#/components/schemas/FermiBestJudgment"
+            - type: "null"
+        totalFireAttempts:
+          type: integer
+          minimum: 0
+
+    PersistedArcadeStateV1:
+      type: object
+      description: window.localStorage['logic_arcade_state_v1'] に永続化する単一版管理スキーマ（v1）
+      additionalProperties: false
+      required:
+        - schemaVersion
+        - locale
+        - soundEnabled
+        - firstVisitedAtMs
+        - firstEverClearedAtMs
+        - hasRecorded7dReturnPlay
+        - combinatorTotalRuns
+        - combinatorCrashedRuns
+        - combinatorStages
+        - fermiTotalFires
+        - fermiTrapFires
+        - fermiStages
+      properties:
+        schemaVersion:
+          type: integer
+          const: 1
+        locale:
+          $ref: "#/components/schemas/Locale"
+        soundEnabled:
+          type: boolean
+        firstVisitedAtMs:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+        firstEverClearedAtMs:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+        hasRecorded7dReturnPlay:
+          type: boolean
+        combinatorTotalRuns:
+          type: integer
+          minimum: 0
+          description: モード1全ステージ累積公式 RUN 回数 R_1
+        combinatorCrashedRuns:
+          type: integer
+          minimum: 0
+          description: モード1全ステージで CRASHED となった累積 RUN 回数 K_1
+        combinatorStages:
+          type: object
+          description: ステージ番号文字列（"1".."10"）をキーとするモード1履歴マップ
+          additionalProperties:
+            $ref: "#/components/schemas/CombinatorStageRecord"
+        fermiTotalFires:
+          type: integer
+          minimum: 0
+          description: モード2全ステージ累積公式 FIRE 回数 F_2
+        fermiTrapFires:
+          type: integer
+          minimum: 0
+          description: モード2全ステージで罠カードを1枚以上選んで FIRE した累積回数 T_2
+        fermiStages:
+          type: object
+          description: ステージ番号文字列（"1".."9"）をキーとするモード2履歴マップ
+          additionalProperties:
+            $ref: "#/components/schemas/FermiStageRecord"
+
+    StorageStatus:
+      type: object
+      description: ブラウザ永続化アダプタの稼働状態（AC-16 検証用）
+      additionalProperties: false
+      required:
+        - storageAvailable
+        - fallbackBannerVisible
+        - persistedKey
+        - recoveredFromCorruption
+      properties:
+        storageAvailable:
+          type: boolean
+        fallbackBannerVisible:
+          type: boolean
+        persistedKey:
+          type: string
+          const: logic_arcade_state_v1
+        recoveredFromCorruption:
+          type: boolean
+
+    OverallRank:
+      type: string
+      description: 総合認定ランク（C_1=0 または C_2=0 のときは UNRANKED）
+      enum:
+        - UNRANKED
+        - C
+        - B
+        - A
+        - S
+        - S+
+
+    DiagnosticAxisScores:
+      type: object
+      description: PRD 11章の算出式による5軸整数スコア（各 0..100、Math.round 四捨五入）
+      additionalProperties: false
+      required:
+        - specComprehension
+        - sequenceDesign
+        - resourceControl
+        - fermiSense
+        - hypothesisPrecision
+      properties:
+        specComprehension:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 第1軸：仕様読解力
+        sequenceDesign:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 第2軸：順序構築力
+        resourceControl:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 第3軸：リソース制御力
+        fermiSense:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 第4軸：フェルミ概算センス
+        hypothesisPrecision:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 第5軸：仮説精度
+
+    DiagnosticProfile:
+      type: object
+      description: 『思考力診断カルテ』の算出スナップショット（AC-10, AC-11, AC-12, AC-20）
+      additionalProperties: false
+      required:
+        - combinatorClearedCount
+        - fermiClearedCount
+        - rankUnlocked
+        - overallScore
+        - overallRank
+        - axes
+        - shareSummaryText
+      properties:
+        combinatorClearedCount:
+          type: integer
+          minimum: 0
+          maximum: 10
+        fermiClearedCount:
+          type: integer
+          minimum: 0
+          maximum: 9
+        rankUnlocked:
+          type: boolean
+        overallScore:
+          type:
+            - integer
+            - "null"
+          minimum: 0
+          maximum: 100
+        overallRank:
+          $ref: "#/components/schemas/OverallRank"
+        axes:
+          $ref: "#/components/schemas/DiagnosticAxisScores"
+        shareSummaryText:
+          $ref: "#/components/schemas/LocalizedText"
+
+    ShareResultState:
+      type: object
+      description: 診断結果コピー共有 UI の状態（AC-11, AC-20）
+      additionalProperties: false
+      required:
+        - copyToastVisible
+        - copyErrorVisible
+        - manualCopyVisible
+        - lastCopiedText
+      properties:
+        copyToastVisible:
+          type: boolean
+        copyErrorVisible:
+          type: boolean
+        manualCopyVisible:
+          type: boolean
+        lastCopiedText:
+          type:
+            - string
+            - "null"
+
+    CombinatorInitialParams:
+      type: object
+      additionalProperties: false
+      required:
+        - energy
+        - output
+        - sideEffect
+        - overloadLimit
+        - targetOutput
+      properties:
+        energy:
+          type: integer
+        output:
+          type: integer
+        sideEffect:
+          type: integer
+        overloadLimit:
+          type: integer
+        targetOutput:
+          type: integer
+
+    CombinatorCurrentParams:
+      type: object
+      additionalProperties: false
+      required:
+        - energy
+        - output
+        - sideEffect
+        - shieldActive
+        - score
+      properties:
+        energy:
+          type: integer
+        output:
+          type: integer
+        sideEffect:
+          type: integer
+        shieldActive:
+          type: boolean
+        score:
+          type:
+            - integer
+            - "null"
+
+    FermiSimulationParams:
+      type: object
+      additionalProperties: false
+      required:
+        - baselineValue
+        - estimateValue
+        - logError
+        - trapTriggeredCount
+      properties:
+        baselineValue:
+          type: number
+        estimateValue:
+          type:
+            - number
+            - "null"
+        logError:
+          type:
+            - number
+            - "null"
+        trapTriggeredCount:
+          type: integer
+          minimum: 0
+          maximum: 3
+
+    SimulationSnapshot:
+      type: object
+      description: window.__ARCADE_TEST_API__.getSimulationSnapshot() が返す公開読み取りスナップショット
+      additionalProperties: false
+      required:
+        - activeMode
+        - stageId
+        - status
+        - stepIndex
+        - assignedSlots
+        - unassignedSlotNames
+        - initialParams
+        - currentParams
+        - fermiParams
+        - officialAttemptCount
+        - stageAttemptCount
+        - currentShakeOffsetPx
+        - maxShakeOffsetPx
+        - debugLog
+        - fermiExplanation
+      properties:
+        activeMode:
+          type:
+            - string
+            - "null"
+          enum:
+            - combinator
+            - fermi
+            - null
+        stageId:
+          type:
+            - integer
+            - "null"
+          minimum: 1
+          maximum: 10
+        status:
+          type: string
+          enum:
+            - IDLE
+            - STEPPING
+            - RUNNING
+            - STAGE CLEAR
+            - CRASHED
+            - FAILED
+            - PERFECT ORDER
+            - GOOD RANGE
+            - OVERKILL
+            - UNDERESTIMATE
+        stepIndex:
+          type: integer
+          minimum: 0
+          maximum: 3
+        assignedSlots:
+          type: array
+          maxItems: 3
+          items:
+            type:
+              - string
+              - "null"
+        unassignedSlotNames:
+          type: array
+          items:
+            type: string
+        initialParams:
+          oneOf:
+            - $ref: "#/components/schemas/CombinatorInitialParams"
+            - type: "null"
+        currentParams:
+          oneOf:
+            - $ref: "#/components/schemas/CombinatorCurrentParams"
+            - type: "null"
+        fermiParams:
+          oneOf:
+            - $ref: "#/components/schemas/FermiSimulationParams"
+            - type: "null"
+        officialAttemptCount:
+          type: integer
+          minimum: 0
+          description: 現在モードの累積公式試行回数（R_1 または F_2。STEP 実行では増加しない）
+        stageAttemptCount:
+          type: integer
+          minimum: 0
+        currentShakeOffsetPx:
+          type: number
+          minimum: 0
+        maxShakeOffsetPx:
+          type: number
+          minimum: 0
+          description: 直近の再生中に発生した最大シェイク振幅（prefers-reduced-motion:reduce 時は 0）
+        debugLog:
+          oneOf:
+            - $ref: "#/components/schemas/CombinatorDebugLog"
+            - type: "null"
+        fermiExplanation:
+          oneOf:
+            - $ref: "#/components/schemas/FermiExplanation"
+            - type: "null"
+
+    CombinatorStageAuditEntry:
+      type: object
+      description: モード1各ステージの全順列 P(n,3) ソルバー監査結果（AC-4）
+      additionalProperties: false
+      required:
+        - stageId
+        - moduleCount
+        - totalPermutations
+        - clearCount
+        - clearRatio
+        - clearsWithoutSideEffectOrIf
+        - representativeClearSequence
+        - representativeCrashSequence
+        - representativeFailedSequence
+        - passesAc4
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 10
+        moduleCount:
+          type: integer
+          minimum: 5
+          maximum: 7
+        totalPermutations:
+          type: integer
+          enum:
+            - 60
+            - 120
+            - 210
+        clearCount:
+          type: integer
+          minimum: 1
+        clearRatio:
+          type: number
+          exclusiveMinimum: 0
+          maximum: 0.5
+        clearsWithoutSideEffectOrIf:
+          type: integer
+          minimum: 0
+          description: 副作用還元・冷却回避・シールド・if条件発火のいずれも伴わないクリア順列数（ステージ8..10では 0 必須）
+        representativeClearSequence:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        representativeCrashSequence:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        representativeFailedSequence:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        passesAc4:
+          type: boolean
+
+    FermiStageAuditEntry:
+      type: object
+      description: モード2各ステージの全組み合わせソルバー監査結果（AC-19）
+      additionalProperties: false
+      required:
+        - stageId
+        - tier
+        - totalCombinations
+        - perfectOrderCount
+        - perfectOrderRatio
+        - goodRangeCount
+        - trapCardCount
+        - representativePerfectCards
+        - representativeGoodCards
+        - representativeOverkillCards
+        - representativeUnderestimateCards
+        - passesAc19
+      properties:
+        stageId:
+          type: integer
+          minimum: 1
+          maximum: 9
+        tier:
+          $ref: "#/components/schemas/FermiTier"
+        totalCombinations:
+          type: integer
+          minimum: 27
+          maximum: 64
+        perfectOrderCount:
+          type: integer
+          minimum: 1
+        perfectOrderRatio:
+          type: number
+          exclusiveMinimum: 0
+          maximum: 0.5
+        goodRangeCount:
+          type: integer
+          minimum: 0
+        trapCardCount:
+          type: integer
+          minimum: 1
+        representativePerfectCards:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        representativeGoodCards:
+          oneOf:
+            - type: array
+              minItems: 3
+              maxItems: 3
+              items:
+                type: string
+            - type: "null"
+        representativeOverkillCards:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        representativeUnderestimateCards:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        passesAc19:
+          type: boolean
+
+    StageAuditReport:
+      type: object
+      description: window.__ARCADE_TEST_API__.auditAllStages() が返す全19ステージ網羅監査レポート
+      additionalProperties: false
+      required:
+        - allPassed
+        - combinatorStages
+        - fermiStages
+      properties:
+        allPassed:
+          type: boolean
+        combinatorStages:
+          type: array
+          minItems: 10
+          maxItems: 10
+          items:
+            $ref: "#/components/schemas/CombinatorStageAuditEntry"
+        fermiStages:
+          type: array
+          minItems: 9
+          maxItems: 9
+          items:
+            $ref: "#/components/schemas/FermiStageAuditEntry"
+
+    AudioStateSnapshot:
+      type: object
+      description: window.__ARCADE_TEST_API__.getAudioState() が返す Web Audio 状態（AC-15）
+      additionalProperties: false
+      required:
+        - soundEnabled
+        - masterGainValue
+        - audioContextInitialized
+        - synthTriggerCount
+        - autoPlayBeforeGestureCount
+      properties:
+        soundEnabled:
+          type: boolean
+        masterGainValue:
+          type: number
+          minimum: 0
+          maximum: 1
+        audioContextInitialized:
+          type: boolean
+        synthTriggerCount:
+          type: integer
+          minimum: 0
+        autoPlayBeforeGestureCount:
+          type: integer
+          const: 0
+
+    SessionStartedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Session Started
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - viewport_category
+            - locale
+            - reduced_motion
+            - is_first_visit
+          properties:
+            viewport_category:
+              type: string
+              enum:
+                - mobile
+                - desktop
+            locale:
+              $ref: "#/components/schemas/Locale"
+            reduced_motion:
+              type: boolean
+            is_first_visit:
+              type: boolean
+
+    StageStartedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Stage Started
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - mode
+            - stage_id
+          properties:
+            mode:
+              type: string
+              enum:
+                - combinator
+                - fermi
+            stage_id:
+              type: integer
+              minimum: 1
+              maximum: 10
+
+    SimulationExecutedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Simulation Executed
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - mode
+            - stage_id
+            - execution_type
+            - attempt_number
+            - is_first_exec_in_session
+            - within_60s
+            - is_first_7d_return_play
+          properties:
+            mode:
+              type: string
+              enum:
+                - combinator
+                - fermi
+            stage_id:
+              type: integer
+              minimum: 1
+              maximum: 10
+            execution_type:
+              type: string
+              enum:
+                - run
+                - step
+                - fire
+            attempt_number:
+              type: integer
+              minimum: 0
+            is_first_exec_in_session:
+              type: boolean
+            within_60s:
+              type: boolean
+            is_first_7d_return_play:
+              type: boolean
+
+    StageCompletedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Stage Completed
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - mode
+            - stage_id
+            - rank_or_status
+            - attempts
+            - is_first_ever_clear
+          properties:
+            mode:
+              type: string
+              enum:
+                - combinator
+                - fermi
+            stage_id:
+              type: integer
+              minimum: 1
+              maximum: 10
+            rank_or_status:
+              type: string
+              enum:
+                - STAGE_CLEAR
+                - PERFECT_ORDER
+                - GOOD_RANGE
+            attempts:
+              type: integer
+              minimum: 1
+            is_first_ever_clear:
+              type: boolean
+
+    StageFailedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Stage Failed
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - mode
+            - stage_id
+            - failure_step
+            - failure_reason
+          properties:
+            mode:
+              type: string
+              enum:
+                - combinator
+                - fermi
+            stage_id:
+              type: integer
+              minimum: 1
+              maximum: 10
+            failure_step:
+              type: string
+              enum:
+                - STEP 1
+                - STEP 2
+                - STEP 3
+                - FINAL CHECK
+                - FERMI_EVAL
+            failure_reason:
+              type: string
+              enum:
+                - CRASHED
+                - FAILED
+                - OVERKILL
+                - UNDERESTIMATE
+
+    DiagnosticViewedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Diagnostic Viewed
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - combinator_cleared_count
+            - fermi_cleared_count
+            - overall_rank
+            - is_first_visit_session
+            - is_first_qualified_in_session
+          properties:
+            combinator_cleared_count:
+              type: integer
+              minimum: 0
+              maximum: 10
+            fermi_cleared_count:
+              type: integer
+              minimum: 0
+              maximum: 9
+            overall_rank:
+              $ref: "#/components/schemas/OverallRank"
+            is_first_visit_session:
+              type: boolean
+            is_first_qualified_in_session:
+              type: boolean
+
+    DiagnosticCopiedEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Diagnostic Copied
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - overall_rank
+            - is_first_copy_in_session
+          properties:
+            overall_rank:
+              $ref: "#/components/schemas/OverallRank"
+            is_first_copy_in_session:
+              type: boolean
+
+    AudioToggledEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Audio Toggled
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - sound_enabled
+          properties:
+            sound_enabled:
+              type: boolean
+
+    ClientErrorOccurredEvent:
+      type: object
+      additionalProperties: false
+      required:
+        - event
+        - timestampMs
+        - properties
+      properties:
+        event:
+          type: string
+          const: Client Error Occurred
+        timestampMs:
+          type: integer
+          minimum: 0
+        properties:
+          type: object
+          additionalProperties: false
+          required:
+            - error_category
+            - screen_name
+            - is_first_error_in_session
+          properties:
+            error_category:
+              type: string
+              enum:
+                - runtime
+                - audio
+                - storage
+            screen_name:
+              $ref: "#/components/schemas/RouteId"
+            is_first_error_in_session:
+              type: boolean
+
+    TelemetryEvent:
+      description: PRD 15章で定義された全9種類の匿名 KPI・診断イベント共用体型
+      oneOf:
+        - $ref: "#/components/schemas/SessionStartedEvent"
+        - $ref: "#/components/schemas/StageStartedEvent"
+        - $ref: "#/components/schemas/SimulationExecutedEvent"
+        - $ref: "#/components/schemas/StageCompletedEvent"
+        - $ref: "#/components/schemas/StageFailedEvent"
+        - $ref: "#/components/schemas/DiagnosticViewedEvent"
+        - $ref: "#/components/schemas/DiagnosticCopiedEvent"
+        - $ref: "#/components/schemas/AudioToggledEvent"
+        - $ref: "#/components/schemas/ClientErrorOccurredEvent"
+
+    SessionTelemetryEvent:
+      description: TelemetryEvent の別名（メモリ内イベントバッファ要素型）
+      $ref: "#/components/schemas/TelemetryEvent"
+
+    ArcadeTestApiContract:
+      type: object
+      description: >-
+        window.__ARCADE_TEST_API__ が公開する全読み取り専用メソッドの戻り値型束。
+        実装側の Window 拡張インターフェースはこのスキーマ生成型をそのまま参照する。
+      additionalProperties: false
+      required:
+        - simulationSnapshot
+        - stageAuditReport
+        - audioState
+        - persistedState
+        - storageStatus
+        - diagnosticProfile
+        - emittedEvents
+      properties:
+        simulationSnapshot:
+          $ref: "#/components/schemas/SimulationSnapshot"
+        stageAuditReport:
+          $ref: "#/components/schemas/StageAuditReport"
+        audioState:
+          $ref: "#/components/schemas/AudioStateSnapshot"
+        persistedState:
+          $ref: "#/components/schemas/PersistedArcadeStateV1"
+        storageStatus:
+          $ref: "#/components/schemas/StorageStatus"
+        diagnosticProfile:
+          $ref: "#/components/schemas/DiagnosticProfile"
+        emittedEvents:
+          type: array
+          items:
+            $ref: "#/components/schemas/TelemetryEvent"
