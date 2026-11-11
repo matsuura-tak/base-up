@@ -1,0 +1,62 @@
+# Web のビルドとテスト。コマンドは .claude/org/app.json の commands.web_build と commands.web_test。
+# コマンドはリポジトリの直下で実行する（例: cd web && npm ci && npm run build）。
+# web_test には単体テストと受け入れテスト（ブラウザで動かす E2E）の両方を入れる
+# （例: cd web && npx playwright install --with-deps && npm test && npx playwright test -c tests/acceptance）。
+# paths.web のフォルダがまだないときだけ飛ばす。
+# フォルダがあるのにコマンドが空なら失敗にする（飛ばした CI は G2 の「緑」に数えない）。
+# 失敗したときは、web/test-results と web/playwright-report を証拠として残す（あれば）。
+name: web
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - name: ビルドとテスト
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, sys
+          with open(".claude/org/app.json", encoding="utf-8") as f:
+              app = json.load(f)
+          web_dir = ((app.get("paths") or {}).get("web") or "web/").strip()
+          commands = app.get("commands") or {}
+          if not os.path.isdir(web_dir):
+              print("::notice::%s がまだないので、Web のビルドとテストを飛ばしました" % web_dir)
+              sys.exit(0)
+          for key in ("web_build", "web_test"):
+              if not (commands.get(key) or "").strip():
+                  print("::error::.claude/org/app.json の commands.%s が空です。Takuma が書くまで、この CI は失敗し、G2 は通りません" % key)
+                  sys.exit(1)
+          for key in ("web_build", "web_test"):
+              cmd = commands[key].strip()
+              print("::group::%s: %s" % (key, cmd), flush=True)
+              code = subprocess.call(["bash", "-eo", "pipefail", "-c", cmd])
+              print("::endgroup::", flush=True)
+              if code != 0:
+                  print("::error::commands.%s が失敗しました（終了コード %d）" % (key, code))
+                  sys.exit(code)
+          PY
+      - name: 失敗したときの証拠を残す
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: web-test-results
+          path: |
+            web/test-results/
+            web/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 14

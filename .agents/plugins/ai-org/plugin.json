@@ -1,0 +1,12 @@
+{
+  "name": "ai-org",
+  "displayName": "AI 開発組織 (ai-org)",
+  "version": "0.4.0",
+  "description": "AI エージェントだけで PRD・設計・実装・検証・リリース準備を進める開発組織（ai-org 0.4.0 の Antigravity 連携プラグイン）。",
+  "repository": "https://github.com/matsuura-tak/AI-",
+  "suggestedPrompts": [
+    "docs/idea-seed.md をもとに feature スキルで最初のコア機能を始めて",
+    "fix スキルで画面の文言や不具合を直したい",
+    "retro スキルで直近の機能を振り返って組織の改善案を出して"
+  ]
+}

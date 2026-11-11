@@ -1,0 +1,25 @@
+{
+  "ai-org-session": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 ./scripts/agy_session_start.py",
+        "timeout": 10
+      }
+    ]
+  },
+  "ai-org-guard": {
+    "PreToolUse": [
+      {
+        "matcher": "edit_file|write_file|read_file|run_command|invoke_subagent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ./scripts/agy_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
