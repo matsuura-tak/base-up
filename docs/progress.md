@@ -12,3 +12,4 @@
 - 組織を導入した。最初の機能は Takuma が /feature で始める。
 - 2026-11-11 001-arcade-core 開始 着手 docs/idea-seed.md
 - 2026-11-12 001-arcade-core G0 PASS docs/approvals/001-arcade-core-G0.md
+- 2026-11-12 001-arcade-core G1 PASS docs/reviews/001-arcade-core-G1-reviewer-r1.md
