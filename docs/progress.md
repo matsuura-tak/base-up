@@ -10,3 +10,4 @@
 
 ## 記録
 - 組織を導入した。最初の機能は Takuma が /feature で始める。
+- 2026-11-11 001-arcade-core 開始 着手 docs/idea-seed.md
