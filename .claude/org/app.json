@@ -1,0 +1,30 @@
+{
+  "org_version": "0.4.0",
+  "app_name": "base-up（仮）",
+  "idea": "エンジニアの論理的思考力・システム設計力・フェルミ推定力を楽しくテスト＆強化できるレトロアーケード風ブラウザゲーム（3-ACT COMBINATOR / FERMI BLASTER＋思考力診断カルテ）",
+  "owner": "matsuura-tak",
+  "approvals": "final",
+  "stacks": [
+    "web",
+    "backend"
+  ],
+  "paths": {
+    "ios": "ios/",
+    "web": "web/",
+    "backend": "backend/",
+    "design": "design/",
+    "contracts": "contracts/",
+    "acceptance_tests": [
+      "ios/AcceptanceTests/",
+      "web/tests/acceptance/",
+      "backend/tests/acceptance/"
+    ]
+  },
+  "commands": {
+    "ios_build": "",
+    "ios_test": "",
+    "web_build": "",
+    "web_test": "",
+    "backend_test": ""
+  }
+}
