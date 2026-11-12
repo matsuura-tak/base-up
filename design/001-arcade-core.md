@@ -168,7 +168,7 @@
 | **画面2：モード1** | ステージ1〜10選択ボタン（`<button type="button">`、`data-stage-id="1..10"`、`data-cleared="true\|false"`、選択中は `aria-pressed="true"`・非選択は `"false"`、`RUNNING` 中は `disabled`。可視文字は未クリア時 `combinator.stage.label` = `S{n}`、クリア済時 `combinator.stage.labelCleared` = `S{n} CLEAR`：`AC-2`, `AC-3`） | `combinator-stage-1` 〜 `combinator-stage-10` | `aria-label`（先頭一致）：<br>・未クリア時（`combinator.stage.aria`）：`ja` `S{n}：ステージ {n} を選択する` / `en` `S{n}: Select Stage {n}`<br>・クリア済時（`combinator.stage.ariaCleared`）：`ja` `S{n} CLEAR：ステージ {n}（クリア済み）を選択する` / `en` `S{n} CLEAR: Select Stage {n} (Cleared)` |
 | **画面2：モード1** | ステージのターゲット達成条件表示（`AC-2`） | `combinator-target-condition` | 本文そのまま（`combinator.target.display`）：<br>`ja`：`ターゲット達成条件：{condition}`<br>`en`：`Target Condition: {condition}` |
 | **画面2：モード1** | ステージの暴走上限値表示（`AC-2`） | `combinator-overheat-limit` | 本文そのまま（`combinator.limit.display`）：<br>`ja`：`暴走上限値：{limit}`<br>`en`：`Overload Limit: {limit}` |
-| **画面2：モード1** | 現在パラメータテレメトリ領域（エネルギー・出力・副作用現在値） | `combinator-telemetry-bar`（子要素：`combinator-param-energy`, `combinator-param-output`, `combinator-param-side-effect`） | 各パラメータの名称と現在値・初期値／上限値 |
+| **画面2：モード1** | 現在パラメータテレメトリ計器領域（`<dl>`：残りエネルギー・現在出力・現在発熱のライブ計器。`<dt>` にはモジュール属性キー `combinator.attr.*` を使わずライブ計器専用キー `combinator.gauge.*` を使う） | `combinator-telemetry-bar`（子要素：`combinator-param-energy`, `combinator-param-output`, `combinator-param-side-effect`） | 各計器の `<dt>` 見出し（ライブ計器専用キー）と `<dd>` 現在値：<br>1. `combinator-param-energy`：`<dt>` `combinator.gauge.energy`（`ja` `残りエネルギー (ENERGY)` / `en` `Energy`）＋ `{energy}`<br>2. `combinator-param-output`：`<dt>` `combinator.gauge.output`（`ja` `現在出力 (OUTPUT)` / `en` `Output`）＋ `{output} / {targetOutput}`<br>3. `combinator-param-side-effect`：`<dt>` `combinator.gauge.sideEffect`（`ja` `現在発熱 (HEAT)` / `en` `Heat`）＋ `{sideEffect} / {overloadLimit}` |
 | **画面2：モード1** | 3段回路シミュレーション描画 Canvas（`<canvas role="img">`：`AC-3`, `AC-5`） | `combinator-simulation-canvas` | `aria-label`（`combinator.canvas.aria`）：<br>`ja`：`3ステップ回路シミュレーション盤面（現在の状態：{status}、ステップ：{step}/3）`<br>`en`：`3-step circuit simulation board (status: {status}, step: {step}/3)` |
 | **画面2：モード1** | 実行結果状態バッジ（`IDLE` / `RUNNING` / `STEPPING` / `STAGE CLEAR` / `CRASHED` / `FAILED`、`role="status"`、`data-status` 併記：`AC-3`, `AC-5`, `AC-6`） | `combinator-result-status` | 本文そのまま（`combinator.status.idle` / `stepping` / `running` / `clear` / `crashed` / `failed`） |
 | **画面2：モード1** | 獲得スコア表示（`AC-3`） | `combinator-score-value` | 本文そのまま（`combinator.score.label`）：<br>`ja`：`獲得スコア：{score} pt`<br>`en`：`Score: {score} pt` |
@@ -178,7 +178,7 @@
 | **画面2：モード1** | `STEP` 1手検証ボタン（`<button type="button">`、`aria-label` 不使用、未充足時・`RUNNING` 中・検証完了時は `disabled`：`AC-5`, `AC-13`） | `combinator-step-button` | 可視文字そのまま（`combinator.action.step`）：<br>`ja`：`STEP（1手進める）`<br>`en`：`STEP (1 Act)` |
 | **画面2：モード1** | `RESET` スロット維持初期化ボタン（`<button type="button">`、`aria-label` 不使用、`RUNNING` 中は `disabled`：`AC-5`） | `combinator-reset-button` | 可視文字そのまま（`combinator.action.reset`）：<br>`ja`：`RESET（初期値に戻す）`<br>`en`：`RESET (Restore)` |
 | **画面2：モード1** | 提示モジュールカード（`<button type="button">`、`aria-label` 不使用、各ステージ5〜7個、`k = 1..7`、`data-module-id` 付与。3スロット満杯時の未配置カードおよび `RUNNING` 中の全カードは `disabled`：`AC-2`） | `combinator-module-card-1` 〜 `combinator-module-card-7` | 可視文字そのまま（先頭にモジュール名 `{name}`、続いて状態別操作文 `combinator.module.assignAction` / `removeAction` / `fullAction`、および4属性テキスト） |
-| **画面2：モード1** | 各モジュールカード内の4属性要素（基本性能・コスト・副作用・発動条件：`AC-2`） | `combinator-module-effect-{k}`, `combinator-module-cost-{k}`, `combinator-module-side-effect-{k}`, `combinator-module-condition-{k}` | 各属性ラベル（`combinator.attr.effect` / `cost` / `sideEffect` / `condition`）と値 |
+| **画面2：モード1** | 各モジュールカード内の4属性要素（基本性能・コスト・副作用・発動条件：`AC-2`） | `combinator-module-effect-{k}`, `combinator-module-cost-{k}`, `combinator-module-side-effect-{k}`, `combinator-module-condition-{k}` | モジュールカード専用の各属性ラベル（`combinator.attr.effect` / `cost` / `sideEffect` / `condition`）と差分・条件値 |
 | **画面2：モード1** | 失敗時デバッグログ領域と必須3項目＋再試行案内（`role="region"`、`AC-6`） | コンテナ：`combinator-debug-log`<br>1. 失敗発生箇所：`combinator-debug-location`<br>2. 原因種別：`combinator-debug-reason`<br>3. 期待条件値と実測値：`combinator-debug-values`<br>再試行案内：`combinator-debug-retry-hint` | 見出し `combinator.debug.heading`、発生箇所 `combinator.debug.location`、原因 `combinator.debug.reason.*`、期待／実測 `combinator.debug.values`、再試行案内 `combinator.debug.retryHint` |
 | **画面2：モード1** | クリア後の次ステージ移動セカンダリボタン（`<a>` または `<button type="button">`、`aria-label` 不使用、クリア時のみ表示） | `combinator-next-stage-button` | 可視文字そのまま（`combinator.action.nextStage`、ステージ10クリア時は `lobby.card.openFermi`）：<br>`ja`：`次のステージを開く` / `FERMI BLASTER を開く`<br>`en`：`Open Next Stage` / `Open FERMI BLASTER` |
 | **画面3：モード2** | 画面3ルート区画 | `screen-fermi` | 見出し `h1` により `FERMI BLASTER`（`nav.fermi`） |
@@ -265,6 +265,9 @@
 | `combinator.target.display` | `ターゲット達成条件：{condition}` | `Target Condition: {condition}` | `combinator-target-condition` 表示・読み上げ（`AC-2`） |
 | `combinator.label.limit` | `暴走上限値` | `Overload Limit` | 暴走上限項目見出し |
 | `combinator.limit.display` | `暴走上限値：{limit}` | `Overload Limit: {limit}` | `combinator-overheat-limit` 表示・読み上げ（`AC-2`） |
+| `combinator.gauge.energy` | `残りエネルギー (ENERGY)` | `Energy` | `combinator-telemetry-bar` 内の残エネルギー計器 `<dt>` 見出し（`combinator-param-energy` 対応・ライブ計器専用） |
+| `combinator.gauge.output` | `現在出力 (OUTPUT)` | `Output` | `combinator-telemetry-bar` 内の現在出力計器 `<dt>` 見出し（`combinator-param-output` 対応・ライブ計器専用） |
+| `combinator.gauge.sideEffect` | `現在発熱 (HEAT)` | `Heat` | `combinator-telemetry-bar` 内の現在発熱計器 `<dt>` 見出し（`combinator-param-side-effect` 対応・ライブ計器専用） |
 | `combinator.canvas.aria` | `3ステップ回路シミュレーション盤面（現在の状態：{status}、ステップ：{step}/3）` | `3-step circuit simulation board (status: {status}, step: {step}/3)` | `combinator-simulation-canvas` `aria-label` |
 | `combinator.section.slots` | `3ステップ実行スロット` | `3-Step Execution Slots` | 画面2スロット区画見出し |
 | `combinator.slot.emptyLabel` | `STEP {k}：未配置（モジュールを押して配置）` | `STEP {k}: Empty (select a module below)` | `combinator-slot-1`〜`3` 空時可視文字・読み上げ |
@@ -278,10 +281,10 @@
 | `combinator.module.assignAction` | `スロットへ配置する` | `Assign to slot` | 未配置モジュールカード内操作ラベル |
 | `combinator.module.removeAction` | `STEP {k} に配置中（押して解除する）` | `In STEP {k} (activate to remove)` | 配置済モジュールカード内操作ラベル |
 | `combinator.module.fullAction` | `スロット満杯（空きを作ると配置可能）` | `Slots full (clear a slot to assign)` | 3スロット満杯時の未配置モジュールカード内補助ラベル（`disabled`） |
-| `combinator.attr.effect` | `基本性能` | `Effect` | モジュール属性1ラベル（`AC-2`） |
-| `combinator.attr.cost` | `エネルギーコスト` | `Energy Cost` | モジュール属性2ラベル（`AC-2`） |
-| `combinator.attr.sideEffect` | `副作用` | `Side Effect` | モジュール属性3ラベル（`AC-2`） |
-| `combinator.attr.condition` | `発動条件` | `Condition` | モジュール属性4ラベル（`AC-2`） |
+| `combinator.attr.effect` | `基本性能` | `Effect` | モジュールカード内属性1ラベル専用（`combinator-module-effect-{k}`：`AC-2`。ライブ計器 `<dt>` には使わない） |
+| `combinator.attr.cost` | `エネルギーコスト` | `Energy Cost` | モジュールカード内属性2ラベル専用（`combinator-module-cost-{k}`：`AC-2`。ライブ計器 `<dt>` には使わない） |
+| `combinator.attr.sideEffect` | `副作用` | `Side Effect` | モジュールカード内属性3ラベル専用（`combinator-module-side-effect-{k}`：`AC-2`。ライブ計器 `<dt>` には使わない） |
+| `combinator.attr.condition` | `発動条件` | `Condition` | モジュールカード内属性4ラベル専用（`combinator-module-condition-{k}`：`AC-2`） |
 | `combinator.status.idle` | `IDLE（待機中）` | `IDLE (Ready)` | `combinator-result-status` 初期状態 |
 | `combinator.status.stepping` | `STEPPING（{step}/3 一時停止中）` | `STEPPING (Paused at {step}/3)` | `STEP` 検証一時停止状態（`AC-5`） |
 | `combinator.status.running` | `RUNNING（再生中）` | `RUNNING (Simulating)` | `RUN` 再生中状態 |
