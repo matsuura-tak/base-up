@@ -64,7 +64,7 @@ flowchart LR
 ```mermaid
 flowchart TD
   subgraph ClientTrustBoundary["信頼の境界：利用者ブラウザ内オリジン空間（外部API通信 0件）"]
-    UIShell["コンテナ：UI シェル＆4画面ビュー層（React 19 + CSS Custom Properties + History API：URLルーティング・日英127キー辞書描画・ARIA状態制御・ErrorBoundaryを担う）"]
+    UIShell["コンテナ：UI シェル＆4画面ビュー層（React 19 + CSS Custom Properties + History API：URLルーティング・日英130キー辞書描画・ARIA状態制御・ErrorBoundaryを担う）"]
     SimEngine["コンテナ：純粋関数ドメイン＆ソルバー層（TypeScript 純粋モジュール：全19ステージ定義・3手状態遷移・対数オーダー判定・全順列ソルバー・5軸スコア算出を担う）"]
     CanvasSvg["コンテナ：ベクター計器描画層（HTML5 Canvas 2D + Inline SVG：回路パルス波形・クラスター増殖レーザー・正五角形レーダーチャートと動き軽減制御を担う）"]
     AudioSynth["コンテナ：チップチューン合成層（Web Audio API OscillatorNode + GainNode：外部音声なしで操作効果音を合成しマスターゲインでミュートを制御する）"]
@@ -159,7 +159,7 @@ flowchart TD
 | セキュリティ | ソース・バンドル内の秘密情報 `0件`、`dangerouslySetInnerHTML` / `eval` 使用 `0件`、認証トークン保存 `0件`、配信レスポンスに CSP（`default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'` 等）・`X-Content-Type-Options: nosniff`・`Referrer-Policy`・`Permissions-Policy`（本番は HSTS も）を付与し CSP 違反 `0件` | `grep` とコード監査（G2）、ローカル配信およびステージングへの `curl -sI` ヘッダー検査・OWASP ASVS L1 監査（G4） | reviewer |
 | プライバシー | 個人データ収集 `0件`、Cookie 発行数 `0件`、初期配信後の外部オリジン通信 `0件`（G5 で匿名解析接続時は `docs/support/` の外部送信公表と100%一致） | Playwright `context.cookies()` 空配列検査・外部オリジン通信 `0件` 監視（G3）、G4/G5 プライバシー表記照合 | reviewer、tech-lead |
 | アクセシビリティ | WCAG 2.2 AA 準拠：`@axe-core/playwright` 違反 `0件`（全4画面×全状態）、通常文字コントラスト `>= 4.5:1`・UI枠／図形 `>= 3.0:1`、押下領域 `>= 24x24px`、`320px`/`1280px` × `100%`/`200%` の4条件で横はみ出し `0px`・重なり不能 `0件`（`AC-18`）、動き軽減時シェイク `0px`（`AC-17`）、キーボード単体完走率 `100%` | `@axe-core/playwright` 自動監査、Playwright 4条件レイアウト＆キーボード完走テスト、5通りスクリーンショット監査（G3） | verifier、design-reviewer |
-| 言語・辞書整合 | 既定言語 `ja`、`ja` / `en` UI 辞書（全127キー）および全19ステージ対訳データの欠落キー・余剰キー・空文字列・プレースホルダー不一致すべて `0件` | 単体テスト `i18n.test.ts` での双方向キー・プレースホルダー完全一致検査（G2）および英語表示スクリーンショット確認（G3） | web-engineer、verifier |
+| 言語・辞書整合 | 既定言語 `ja`、`ja` / `en` UI 辞書（全130キー）および全19ステージ対訳データの欠落キー・余剰キー・空文字列・プレースホルダー不一致すべて `0件` | 単体テスト `i18n.test.ts` での双方向キー・プレースホルダー完全一致検査（G2）および英語表示スクリーンショット確認（G3） | web-engineer、verifier |
 
 ## 7. 脅威モデル
 本機能はリポジトリ最初の機能であり、「静的配信サーバーから利用者ブラウザへの配信境界」「URL クエリパラメータ（`?stage=`）および `localStorage` からの信頼できない入力境界」「Clipboard API 呼び出し境界」を新設するため、STRIDE の軽い脅威モデルを定義する。

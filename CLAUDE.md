@@ -42,4 +42,4 @@
 - **Node・ビルド・型生成**：Node.js `24`（`.nvmrc`）、TypeScript `5.9.3`（`strict: true`）。`npm run build` で必ず `contracts/openapi.yaml` から `src/generated/contracts.d.ts` を生成し、`tsc --noEmit`・単一バンドル `vite build`・gzip 予算検査を通す（ADR-001）。
 - **対応ブラウザと性能予算**：Chrome / Edge / Firefox / Safari（macOS・iOS）/ Android Chrome の最新2メジャー版（Baseline Widely available）。`LCP <= 2.5s`、`INP <= 200ms`、`CLS <= 0.1`、初期 JS `<= 120 KB`（gzip）、初期 CSS `<= 20 KB`（gzip）、初期ロード後の外部通信 `0件`・完全オフライン完走必須。
 - **永続化・音声・テスト境界**：保存先は `localStorage['logic_arcade_state_v1']`（全 I/O を `try/catch` で保護し不可時はインメモリ退避＋バナー表示）。効果音は外部音源なしの Web Audio API 合成（操作前自動再生 `0回`、`SOUND OFF` 時マスターゲイン `0`）。`window.__ARCADE_TEST_API__` と全60行の `data-testid` は `contracts/arcade-test-seam.md` に厳密準拠する（ADR-002）。
-- **見た目・言語・アクセシビリティ**：色・文字・余白・モーションは `design/tokens.json` のトークンのみを使用。既定言語は `ja` で `ja`/`en` 全127キー＋全19ステージ対訳の不一致 `0件`、`320px × 200%` 横はみ出し `0px`、動き軽減時シェイク `0px`、axe 違反 `0件` を守る。
+- **見た目・言語・アクセシビリティ**：色・文字・余白・モーションは `design/tokens.json` のトークンのみを使用。既定言語は `ja` で `ja`/`en` 全130キー＋全19ステージ対訳の不一致 `0件`、`320px × 200%` 横はみ出し `0px`、動き軽減時シェイク `0px`、axe 違反 `0件` を守る。
