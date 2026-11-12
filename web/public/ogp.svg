@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#090D16" />
+  <rect x="36" y="36" width="1128" height="558" rx="16" fill="#111827" stroke="#22D3EE" stroke-width="3" />
+  <polygon points="930,150 1070,252 1016,416 844,416 790,252" fill="rgba(34,211,238,0.2)" stroke="#22D3EE" stroke-width="4" />
+  <text x="96" y="230" fill="#F1F5F9" font-family="system-ui, sans-serif" font-size="72" font-weight="700">LOGIC ARCADE</text>
+  <text x="96" y="310" fill="#22D3EE" font-family="system-ui, sans-serif" font-size="34" font-weight="700">3-ACT COMBINATOR  |  FERMI BLASTER</text>
+  <text x="96" y="390" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="28" font-weight="600">設計思考とフェルミ推定を鍛えるレトロ思考ゲーム＆5軸思考力診断カルテ</text>
+</svg>

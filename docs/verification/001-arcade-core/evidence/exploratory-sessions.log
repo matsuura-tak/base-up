@@ -1,0 +1,5 @@
+[Session 1 / R1] PASS | ops=59 | elapsedMs=2810 | gaugeDt=verified(ja/en), R_1=2, K_1=1, errors=0
+[Session 2 / R2] PASS | ops=44 | elapsedMs=2885 | F_2=4, T_2=2, errors=0
+[Session 3 / R3] PASS | ops=43 | elapsedMs=4685 | profile=B(56)->B(59), manualCopyLocaleLiveSync=verified(EN->JA->EN), errors=0
+[Session 4 / R4] PASS | ops=42 | elapsedMs=1529 | multiTab=ok, badUrls=10, errors=0
+[Session 5 / R5] PASS | ops=45 | elapsedMs=3477 | 320x200_dark_en_overflow=0px, 1280x200_slotsCols=1, ellipsis=0, axeViolations=0, errors=0

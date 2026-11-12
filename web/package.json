@@ -1,0 +1,34 @@
+{
+  "name": "logic-arcade-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "generate:contracts": "openapi-typescript ../contracts/openapi.yaml -o src/generated/contracts.d.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run generate:contracts && npm run typecheck && vite build && node ./scripts/check-bundle-budget.mjs",
+    "dev": "vite",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "test": "vitest run",
+    "audit:lighthouse": "node ./scripts/run-lighthouse.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "jsdom": "31.0.0",
+    "lighthouse": "13.6.0",
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}
