@@ -282,30 +282,6 @@ p {
   font-weight: var(--font-weight-strong);
 }
 
-.status-box-warning {
-  border-color: var(--color-status-warning);
-  background-color: var(--color-status-warning-bg);
-  color: var(--color-status-warning);
-}
-
-.status-box-info {
-  border-color: var(--color-status-info);
-  background-color: var(--color-status-info-bg);
-  color: var(--color-status-info);
-}
-
-.status-box-success {
-  border-color: var(--color-status-success);
-  background-color: var(--color-status-success-bg);
-  color: var(--color-status-success);
-}
-
-.status-box-danger {
-  border-color: var(--color-status-danger);
-  background-color: var(--color-status-danger-bg);
-  color: var(--color-status-danger);
-}
-
 /* Buttons and links (B-2, B-5: only one primary CTA per screen uses action-primary fill) */
 .btn-primary,
 .btn-secondary,
@@ -400,6 +376,30 @@ button:disabled,
   flex-direction: column;
   gap: var(--space-3);
   min-width: 0;
+}
+
+.status-box-warning {
+  border-color: var(--color-status-warning);
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning);
+}
+
+.status-box-info {
+  border-color: var(--color-status-info);
+  background-color: var(--color-status-info-bg);
+  color: var(--color-status-info);
+}
+
+.status-box-success {
+  border-color: var(--color-status-success);
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success);
+}
+
+.status-box-danger {
+  border-color: var(--color-status-danger);
+  background-color: var(--color-status-danger-bg);
+  color: var(--color-status-danger);
 }
 
 .hero-panel {
@@ -1007,7 +1007,7 @@ button:disabled,
   }
 
   .telemetry-dl {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
   }
 
   .fermi-cards-grid {
@@ -1015,7 +1015,7 @@ button:disabled,
   }
 }
 
-/* Desktop >= 80rem (1280px at 100%; automatically collapses to 1-col at 1280px x 200% font scale) */
+/* Desktop >= 80rem (1280px at 100%; rem-based minmax() inside tracks auto-wraps on 200% root font-size) */
 @media (min-width: 80rem) {
   .site-header-inner {
     padding: var(--space-3) var(--space-8);
@@ -1030,7 +1030,7 @@ button:disabled,
   }
 
   .lobby-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   }
 
   .two-pane-layout {
@@ -1038,10 +1038,14 @@ button:disabled,
   }
 
   .slots-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
   }
 
   .modules-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+
+  .fermi-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   }
 }

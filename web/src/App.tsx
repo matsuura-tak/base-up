@@ -1257,7 +1257,6 @@ export function App(): ReactElement {
         screen: 'diagnostic',
         unlock: buildDiagnosticUnlock(latestProfile, {
           kind: 'manualFallback',
-          manualText: summaryText,
         }),
       });
     };

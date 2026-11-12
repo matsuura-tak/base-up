@@ -212,17 +212,17 @@ export function CombinatorScreen({
 
             <dl className="telemetry-dl tabular-nums" data-testid="combinator-telemetry-bar">
               <div className="telemetry-item">
-                <dt>{t(locale, 'combinator.attr.cost')}</dt>
+                <dt>{t(locale, 'combinator.gauge.energy')}</dt>
                 <dd data-testid="combinator-param-energy">{execution.params.energy}</dd>
               </div>
               <div className="telemetry-item">
-                <dt>{t(locale, 'combinator.attr.effect')}</dt>
+                <dt>{t(locale, 'combinator.gauge.output')}</dt>
                 <dd data-testid="combinator-param-output">
                   {`${String(execution.params.output)} / ${String(stage.targetOutput)}`}
                 </dd>
               </div>
               <div className="telemetry-item">
-                <dt>{t(locale, 'combinator.attr.sideEffect')}</dt>
+                <dt>{t(locale, 'combinator.gauge.sideEffect')}</dt>
                 <dd data-testid="combinator-param-side-effect">
                   {`${String(execution.params.sideEffect)} / ${String(stage.overloadLimit)}`}
                 </dd>

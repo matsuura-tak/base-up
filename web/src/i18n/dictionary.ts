@@ -61,6 +61,9 @@ export const JA_DICTIONARY = {
   'combinator.target.display': 'ターゲット達成条件：{condition}',
   'combinator.label.limit': '暴走上限値',
   'combinator.limit.display': '暴走上限値：{limit}',
+  'combinator.gauge.energy': '残りエネルギー (ENERGY)',
+  'combinator.gauge.output': '現在出力 (OUTPUT)',
+  'combinator.gauge.sideEffect': '現在発熱 (HEAT)',
   'combinator.canvas.aria':
     '3ステップ回路シミュレーション盤面（現在の状態：{status}、ステップ：{step}/3）',
   'combinator.section.slots': '3ステップ実行スロット',
@@ -214,6 +217,9 @@ export const EN_DICTIONARY: Record<DictionaryKey, string> = {
   'combinator.target.display': 'Target Condition: {condition}',
   'combinator.label.limit': 'Overload Limit',
   'combinator.limit.display': 'Overload Limit: {limit}',
+  'combinator.gauge.energy': 'Energy',
+  'combinator.gauge.output': 'Output',
+  'combinator.gauge.sideEffect': 'Heat',
   'combinator.canvas.aria':
     '3-step circuit simulation board (status: {status}, step: {step}/3)',
   'combinator.section.slots': '3-Step Execution Slots',

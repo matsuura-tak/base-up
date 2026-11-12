@@ -141,7 +141,7 @@ export type FermiExecutionState =
 export type DiagnosticSharePhase =
   | { readonly kind: 'idle' }
   | { readonly kind: 'copied'; readonly copiedText: string }
-  | { readonly kind: 'manualFallback'; readonly manualText: string };
+  | { readonly kind: 'manualFallback' };
 
 export type DiagnosticUnlockState =
   | {

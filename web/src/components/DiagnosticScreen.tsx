@@ -1,6 +1,6 @@
 import { useRef, type MouseEvent, type ReactElement } from 'react';
 import type { DiagnosticUnlockState, Locale, OverallRank } from '../domain/types';
-import { t } from '../i18n/dictionary';
+import { pickText, t } from '../i18n/dictionary';
 import {
   IconCheck,
   IconCrossCrash,
@@ -238,7 +238,7 @@ export function DiagnosticScreen({
                     className="manual-copy-textarea"
                     data-testid="diagnostic-manual-copy-textarea"
                     readOnly
-                    value={unlock.share.manualText}
+                    value={pickText(profile.shareSummaryText, locale)}
                   />
                   <div>
                     <button

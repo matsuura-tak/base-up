@@ -9,13 +9,20 @@ function extractPlaceholders(template: string): string[] {
 }
 
 describe('Bilingual dictionary & stage localization parity', () => {
-  it('maintains 100% key and placeholder parity across all 127 ja/en dictionary entries', () => {
+  it('maintains 100% key and placeholder parity across all 130 ja/en dictionary entries', () => {
     const jaKeys = Object.keys(JA_DICTIONARY).sort();
     const enKeys = Object.keys(EN_DICTIONARY).sort();
 
-    expect(jaKeys).toHaveLength(127);
-    expect(enKeys).toHaveLength(127);
+    expect(jaKeys).toHaveLength(130);
+    expect(enKeys).toHaveLength(130);
     expect(jaKeys).toEqual(enKeys);
+
+    expect(JA_DICTIONARY['combinator.gauge.energy']).toBe('残りエネルギー (ENERGY)');
+    expect(JA_DICTIONARY['combinator.gauge.output']).toBe('現在出力 (OUTPUT)');
+    expect(JA_DICTIONARY['combinator.gauge.sideEffect']).toBe('現在発熱 (HEAT)');
+    expect(EN_DICTIONARY['combinator.gauge.energy']).toBe('Energy');
+    expect(EN_DICTIONARY['combinator.gauge.output']).toBe('Output');
+    expect(EN_DICTIONARY['combinator.gauge.sideEffect']).toBe('Heat');
 
     const recordJa: Readonly<Record<string, string>> = JA_DICTIONARY;
     const recordEn: Readonly<Record<string, string>> = EN_DICTIONARY;
