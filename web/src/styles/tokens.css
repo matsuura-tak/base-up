@@ -1,0 +1,218 @@
+:root {
+  color-scheme: light;
+
+  /* Surface tokens (design/tokens.json) */
+  --color-surface-canvas: #F4F7FB;
+  --color-surface-panel: #FFFFFF;
+  --color-surface-elevated: #EBF0F7;
+  --color-surface-stage: #F8FAFC;
+  --color-surface-disabled: #E2E8F0;
+
+  /* Text tokens */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-on-action: #FFFFFF;
+  --color-text-disabled: #64748B;
+
+  /* Action tokens */
+  --color-action-primary: #0055D4;
+  --color-action-primary-hover: #003FA3;
+
+  /* Status tokens */
+  --color-status-success: #006B54;
+  --color-status-success-bg: #E6F7F2;
+  --color-status-info: #0055D4;
+  --color-status-info-bg: #E8F1FF;
+  --color-status-warning: #8A4B00;
+  --color-status-warning-bg: #FFF4E5;
+  --color-status-danger: #B3124F;
+  --color-status-danger-bg: #FDECF2;
+
+  /* Border, focus, and chart tokens */
+  --color-border-default: #5B6B82;
+  --color-border-disabled: #94A3B8;
+  --color-focus-ring: #0044AA;
+  --color-chart-grid: #64748B;
+  --color-chart-polygon-stroke: #0055D4;
+  --color-chart-polygon-fill: rgba(0, 85, 212, 0.16);
+
+  /* Typography tokens (rem only — B-4) */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", sans-serif;
+  --font-size-display: 1.75rem;
+  --line-height-display: 1.25;
+  --font-weight-display: 700;
+
+  --font-size-heading: 1.25rem;
+  --line-height-heading: 1.35;
+  --font-weight-heading: 700;
+
+  --font-size-body: 1rem;
+  --line-height-body: 1.55;
+  --font-weight-regular: 400;
+  --font-weight-strong: 600;
+
+  --font-size-caption: 0.875rem;
+  --line-height-caption: 1.45;
+  --font-weight-caption: 600;
+
+  --prose-max-measure: 38em;
+
+  /* Spacing tokens (4/8/12/16/24/32px grid only — B-3) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Sizing, border, and focus tokens */
+  --container-max: 1200px;
+  --target-min: 24px;
+  --target-aux: 36px;
+  --target-mobile: 44px;
+  --border-width-default: 1.5px;
+  --border-width-active: 2px;
+  --chart-polygon-stroke-width: 2.5px;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-surface-canvas: #090D16;
+    --color-surface-panel: #111827;
+    --color-surface-elevated: #1A2438;
+    --color-surface-stage: #0D1424;
+    --color-surface-disabled: #1E293B;
+
+    --color-text-primary: #F1F5F9;
+    --color-text-secondary: #CBD5E1;
+    --color-text-on-action: #06121E;
+    --color-text-disabled: #94A3B8;
+
+    --color-action-primary: #22D3EE;
+    --color-action-primary-hover: #67E8F9;
+
+    --color-status-success: #34D399;
+    --color-status-success-bg: #082922;
+    --color-status-info: #38BDF8;
+    --color-status-info-bg: #0A2239;
+    --color-status-warning: #FBBF24;
+    --color-status-warning-bg: #2B1F06;
+    --color-status-danger: #FB7185;
+    --color-status-danger-bg: #310E1B;
+
+    --color-border-default: #7C8EA6;
+    --color-border-disabled: #475569;
+    --color-focus-ring: #38BDF8;
+    --color-chart-grid: #7C8EA6;
+    --color-chart-polygon-stroke: #22D3EE;
+    --color-chart-polygon-fill: rgba(34, 211, 238, 0.20);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-surface-canvas: #FFFFFF;
+    --color-surface-panel: #FFFFFF;
+    --color-surface-elevated: #F5F5F5;
+    --color-surface-stage: #FFFFFF;
+    --color-surface-disabled: #EEEEEE;
+
+    --color-text-primary: #000000;
+    --color-text-secondary: #141414;
+    --color-text-on-action: #FFFFFF;
+    --color-text-disabled: #555555;
+
+    --color-action-primary: #003399;
+    --color-action-primary-hover: #001F66;
+
+    --color-status-success: #004D3B;
+    --color-status-success-bg: #FFFFFF;
+    --color-status-info: #003399;
+    --color-status-info-bg: #FFFFFF;
+    --color-status-warning: #663600;
+    --color-status-warning-bg: #FFFFFF;
+    --color-status-danger: #8C0036;
+    --color-status-danger-bg: #FFFFFF;
+
+    --color-border-default: #000000;
+    --color-border-disabled: #666666;
+    --color-focus-ring: #002277;
+    --color-chart-grid: #262626;
+    --color-chart-polygon-stroke: #003399;
+    --color-chart-polygon-fill: rgba(0, 51, 153, 0.12);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root {
+    --color-surface-canvas: #000000;
+    --color-surface-panel: #000000;
+    --color-surface-elevated: #0A0A0A;
+    --color-surface-stage: #000000;
+    --color-surface-disabled: #1A1A1A;
+
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #EFEFEF;
+    --color-text-on-action: #000000;
+    --color-text-disabled: #A6A6A6;
+
+    --color-action-primary: #00FFFF;
+    --color-action-primary-hover: #80FFFF;
+
+    --color-status-success: #5CFFB8;
+    --color-status-success-bg: #000000;
+    --color-status-info: #66D9FF;
+    --color-status-info-bg: #000000;
+    --color-status-warning: #FFD633;
+    --color-status-warning-bg: #000000;
+    --color-status-danger: #FF80A6;
+    --color-status-danger-bg: #000000;
+
+    --color-border-default: #FFFFFF;
+    --color-border-disabled: #808080;
+    --color-focus-ring: #FFFF00;
+    --color-chart-grid: #CCCCCC;
+    --color-chart-polygon-stroke: #00FFFF;
+    --color-chart-polygon-fill: rgba(0, 255, 255, 0.18);
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --color-surface-canvas: Canvas;
+    --color-surface-panel: Canvas;
+    --color-surface-elevated: ButtonFace;
+    --color-surface-stage: Canvas;
+    --color-surface-disabled: ButtonFace;
+
+    --color-text-primary: CanvasText;
+    --color-text-secondary: CanvasText;
+    --color-text-on-action: HighlightText;
+    --color-text-disabled: GrayText;
+
+    --color-action-primary: Highlight;
+    --color-action-primary-hover: Highlight;
+
+    --color-status-success: CanvasText;
+    --color-status-success-bg: Canvas;
+    --color-status-info: Highlight;
+    --color-status-info-bg: Canvas;
+    --color-status-warning: CanvasText;
+    --color-status-warning-bg: Canvas;
+    --color-status-danger: CanvasText;
+    --color-status-danger-bg: Canvas;
+
+    --color-border-default: ButtonText;
+    --color-border-disabled: GrayText;
+    --color-focus-ring: Highlight;
+    --color-chart-grid: CanvasText;
+    --color-chart-polygon-stroke: Highlight;
+    --color-chart-polygon-fill: transparent;
+  }
+}
