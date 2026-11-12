@@ -26,6 +26,13 @@ xcuserdata/
 DerivedData/
 .build/
 node_modules/
+dist/
+web/dist/
+web/coverage/
+web/.lighthouseci/
+web/test-results/
+web/playwright-report/
+*.tsbuildinfo
 __pycache__/
 *.pyc
 .venv/
