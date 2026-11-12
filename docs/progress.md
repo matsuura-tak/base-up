@@ -18,3 +18,4 @@
 - 2026-11-12 001-arcade-core ステップ12 PASS .claude/org/app.json（PR #4 マージ・取り込み完了）
 - 2026-11-13 001-arcade-core G2（Web実装） PASS docs/reviews/001-arcade-core-G2-web-reviewer-r1.md
 - 2026-11-13 001-arcade-core G2（Web修正） PASS docs/reviews/001-arcade-core-G2-web-reviewer-r2.md
+- 2026-11-13 001-arcade-core G3 PASS docs/verification/001-arcade-core/verification.md, docs/reviews/001-arcade-core-G3-verifier-r2.md, docs/reviews/001-arcade-core-G3-design-reviewer-r2.md（Takuma のマージ待ち）
