@@ -23,8 +23,8 @@
   "commands": {
     "ios_build": "",
     "ios_test": "",
-    "web_build": "",
-    "web_test": "",
+    "web_build": "cd web && npm ci && npm run build",
+    "web_test": "(cd web && npm test) && (cd web/tests/acceptance && npm ci && npx playwright install --with-deps chromium firefox webkit && npx playwright test)",
     "backend_test": ""
   }
 }
