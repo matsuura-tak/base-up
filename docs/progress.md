@@ -13,3 +13,4 @@
 - 2026-11-11 001-arcade-core 開始 着手 docs/idea-seed.md
 - 2026-11-12 001-arcade-core G0 PASS docs/approvals/001-arcade-core-G0.md
 - 2026-11-12 001-arcade-core G1 PASS docs/reviews/001-arcade-core-G1-reviewer-r1.md
+- 2026-11-12 001-arcade-core G2（受け入れテスト） PASS docs/reviews/001-arcade-core-G2-tests-reviewer-r2.md, docs/reviews/001-arcade-core-G2-tests-tech-lead-r2.md
