@@ -138,11 +138,90 @@ export async function selectFermiHypothesisCards(
   }
 }
 
+export async function clickResetAndMeasureIdleMs(
+  page: Page,
+  resetButtonTestId: 'combinator-reset-button' | 'fermi-reset-button',
+  statusBadgeTestId: 'combinator-result-status' | 'fermi-result-status',
+): Promise<number> {
+  await page.evaluate(
+    ({ resetTestId, statusTestId }) => {
+      const timing = { clickStartMs: null as number | null, idleReachedMs: null as number | null };
+      window.__LAST_RESET_TIMING__ = timing;
+
+      const checkIdle = (): boolean => {
+        const statusEl = document.querySelector(`[data-testid="${statusTestId}"]`);
+        if (statusEl?.getAttribute('data-status') === 'IDLE') {
+          if (timing.idleReachedMs === null) {
+            timing.idleReachedMs = window.performance.now();
+          }
+          return true;
+        }
+        return false;
+      };
+
+      const onCaptureClick = (ev: MouseEvent): void => {
+        const target = ev.target;
+        if (!(target instanceof Element) || !target.closest(`[data-testid="${resetTestId}"]`)) {
+          return;
+        }
+        window.removeEventListener('click', onCaptureClick, true);
+        timing.clickStartMs = window.performance.now();
+
+        const observer = new MutationObserver(() => {
+          if (checkIdle()) {
+            observer.disconnect();
+          }
+        });
+        observer.observe(document.body, {
+          subtree: true,
+          childList: true,
+          attributes: true,
+          attributeFilter: ['data-status'],
+        });
+      };
+
+      window.addEventListener('click', onCaptureClick, true);
+    },
+    { resetTestId: resetButtonTestId, statusTestId: statusBadgeTestId },
+  );
+
+  await page.getByTestId(resetButtonTestId).click();
+  await expect(page.getByTestId(statusBadgeTestId)).toHaveAttribute('data-status', 'IDLE', {
+    timeout: 1000,
+  });
+
+  const timing = await page.evaluate((statusTestId) => {
+    const recorded = window.__LAST_RESET_TIMING__ ?? {
+      clickStartMs: null,
+      idleReachedMs: null,
+    };
+    if (recorded.clickStartMs !== null && recorded.idleReachedMs === null) {
+      const statusEl = document.querySelector(`[data-testid="${statusTestId}"]`);
+      if (statusEl?.getAttribute('data-status') === 'IDLE') {
+        recorded.idleReachedMs = window.performance.now();
+      }
+    }
+    return recorded;
+  }, statusBadgeTestId);
+
+  expect(timing.clickStartMs).not.toBeNull();
+  expect(timing.idleReachedMs).not.toBeNull();
+  const elapsedMs = timing.idleReachedMs! - timing.clickStartMs!;
+  expect(elapsedMs).toBeGreaterThanOrEqual(0);
+  return elapsedMs;
+}
+
 export async function tabToElementByTestId(
   page: Page,
   targetTestId: string,
   maxTabs = 80,
 ): Promise<void> {
+  const browserName = page.context().browser()?.browserType().name();
+  const keys =
+    browserName === 'webkit' && process.platform === 'darwin'
+      ? (['Alt+Tab', 'Alt+Shift+Tab'] as const)
+      : (['Tab', 'Shift+Tab'] as const);
+
   const checkActive = async () =>
     page.evaluate(() => {
       const el = document.activeElement as HTMLElement | null;
@@ -157,7 +236,7 @@ export async function tabToElementByTestId(
       };
     });
 
-  for (const key of ['Tab', 'Shift+Tab'] as const) {
+  for (const key of keys) {
     for (let i = 0; i < maxTabs; i += 1) {
       const activeInfo = await checkActive();
       if (activeInfo.testId === targetTestId) {
@@ -168,5 +247,7 @@ export async function tabToElementByTestId(
       await page.keyboard.press(key);
     }
   }
-  throw new Error(`Keyboard navigation did not reach data-testid="${targetTestId}" within ${maxTabs} presses`);
+  throw new Error(
+    `Keyboard navigation (${keys.join(' / ')}) did not reach data-testid="${targetTestId}" within ${maxTabs} presses`,
+  );
 }

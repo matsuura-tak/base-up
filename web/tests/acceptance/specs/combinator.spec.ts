@@ -3,6 +3,7 @@ import { COMBINATOR_STAGE_EXPECTATIONS } from '../helpers/contracts.js';
 import {
   assignCombinatorModules,
   attachPageMonitors,
+  clickResetAndMeasureIdleMs,
   expectZeroAxeViolations,
   invokeTestApi,
 } from '../helpers/test-utils.js';
@@ -227,16 +228,12 @@ test.describe('Mode 1: 3-ACT COMBINATOR Acceptance Suite', () => {
     await expect(page.getByTestId('combinator-param-output')).toContainText('6');
     await expect(page.getByTestId('combinator-param-side-effect')).toContainText('2');
 
-    /* RESET 押下から 0.2秒（200ms）以内に3スロット維持のまま初期値・IDLE へ戻る */
-    const resetButton = page.getByTestId('combinator-reset-button');
-    const resetStartMs = await page.evaluate(() => window.performance.now());
-    await resetButton.click();
-    await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(
-      'data-status',
-      'IDLE',
-      { timeout: 200 },
+    /* RESET の click 発火時点（capture フェーズ）から 0.2秒（200ms）以内に3スロット維持のまま初期値・IDLE へ戻る */
+    const resetElapsedMs = await clickResetAndMeasureIdleMs(
+      page,
+      'combinator-reset-button',
+      'combinator-result-status',
     );
-    const resetElapsedMs = (await page.evaluate(() => window.performance.now())) - resetStartMs;
     expect(resetElapsedMs).toBeLessThanOrEqual(200);
 
     await expect(page.getByTestId('combinator-slot-1')).toHaveAttribute(

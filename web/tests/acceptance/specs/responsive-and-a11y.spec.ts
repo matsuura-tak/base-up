@@ -152,7 +152,7 @@ test.describe('Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Su
     expect(monitors.uncaughtErrors).toEqual([]);
   });
 
-  test('AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走', async ({
+  test('AC-18 / AC18_キーボード操作（フォーカス移動キーとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走', async ({
     page,
   }) => {
     const monitors = attachPageMonitors(page);
@@ -187,7 +187,7 @@ test.describe('Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Su
     await tabToElementByTestId(page, 'combinator-module-card-3');
     await page.keyboard.press('Enter');
 
-    /* RUN ボタンへ Tab / Shift+Tab で移動して Enter 実行 */
+    /* RUN ボタンへ Tab / Shift+Tab（macOS WebKit は Alt+Tab / Alt+Shift+Tab）で移動して Enter 実行 */
     await tabToElementByTestId(page, 'combinator-run-button');
     await page.keyboard.press('Enter');
     await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(

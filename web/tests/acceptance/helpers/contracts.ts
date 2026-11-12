@@ -92,6 +92,7 @@ export interface FermiExplanation {
   baselineFormula: LocalizedText;
   baselineBreakdownText: LocalizedText;
   trapNotes: FermiTrapNote[];
+  showRetryHint: boolean;
 }
 
 export interface SimulationSnapshot {
@@ -189,11 +190,123 @@ export interface DiagnosticProfile {
   shareSummaryText: LocalizedText;
 }
 
-export interface TelemetryEvent {
-  event: string;
+export type TelemetryEventName =
+  | 'Session Started'
+  | 'Stage Started'
+  | 'Simulation Executed'
+  | 'Stage Completed'
+  | 'Stage Failed'
+  | 'Diagnostic Viewed'
+  | 'Diagnostic Copied'
+  | 'Audio Toggled'
+  | 'Client Error Occurred';
+
+export interface SessionStartedEvent {
+  event: 'Session Started';
   timestampMs: number;
-  properties: Record<string, unknown>;
+  properties: {
+    viewport_category: 'mobile' | 'desktop';
+    locale: Locale;
+    reduced_motion: boolean;
+    is_first_visit: boolean;
+  };
 }
+
+export interface StageStartedEvent {
+  event: 'Stage Started';
+  timestampMs: number;
+  properties: {
+    mode: 'combinator' | 'fermi';
+    stage_id: number;
+  };
+}
+
+export interface SimulationExecutedEvent {
+  event: 'Simulation Executed';
+  timestampMs: number;
+  properties: {
+    mode: 'combinator' | 'fermi';
+    stage_id: number;
+    execution_type: 'run' | 'step' | 'fire';
+    attempt_number: number;
+    is_first_exec_in_session: boolean;
+    within_60s: boolean;
+    is_first_7d_return_play: boolean;
+  };
+}
+
+export interface StageCompletedEvent {
+  event: 'Stage Completed';
+  timestampMs: number;
+  properties: {
+    mode: 'combinator' | 'fermi';
+    stage_id: number;
+    rank_or_status: 'STAGE_CLEAR' | 'PERFECT_ORDER' | 'GOOD_RANGE';
+    attempts: number;
+    is_first_ever_clear: boolean;
+  };
+}
+
+export interface StageFailedEvent {
+  event: 'Stage Failed';
+  timestampMs: number;
+  properties: {
+    mode: 'combinator' | 'fermi';
+    stage_id: number;
+    failure_step: 'STEP 1' | 'STEP 2' | 'STEP 3' | 'FINAL CHECK' | 'FERMI_EVAL';
+    failure_reason: 'CRASHED' | 'FAILED' | 'OVERKILL' | 'UNDERESTIMATE';
+  };
+}
+
+export interface DiagnosticViewedEvent {
+  event: 'Diagnostic Viewed';
+  timestampMs: number;
+  properties: {
+    combinator_cleared_count: number;
+    fermi_cleared_count: number;
+    overall_rank: OverallRank;
+    is_first_visit_session: boolean;
+    is_first_qualified_in_session: boolean;
+  };
+}
+
+export interface DiagnosticCopiedEvent {
+  event: 'Diagnostic Copied';
+  timestampMs: number;
+  properties: {
+    overall_rank: OverallRank;
+    is_first_copy_in_session: boolean;
+  };
+}
+
+export interface AudioToggledEvent {
+  event: 'Audio Toggled';
+  timestampMs: number;
+  properties: {
+    sound_enabled: boolean;
+  };
+}
+
+export interface ClientErrorOccurredEvent {
+  event: 'Client Error Occurred';
+  timestampMs: number;
+  properties: {
+    error_category: 'runtime' | 'audio' | 'storage';
+    screen_name: RouteId;
+    is_first_error_in_session: boolean;
+  };
+}
+
+export type TelemetryEvent =
+  | SessionStartedEvent
+  | StageStartedEvent
+  | SimulationExecutedEvent
+  | StageCompletedEvent
+  | StageFailedEvent
+  | DiagnosticViewedEvent
+  | DiagnosticCopiedEvent
+  | AudioToggledEvent
+  | ClientErrorOccurredEvent;
 
 export interface ArcadeTestApi {
   getSimulationSnapshot(): SimulationSnapshot;
@@ -205,10 +318,16 @@ export interface ArcadeTestApi {
   getEmittedEvents(): TelemetryEvent[];
 }
 
+export interface ResetTimingRecord {
+  clickStartMs: number | null;
+  idleReachedMs: number | null;
+}
+
 declare global {
   interface Window {
     __ARCADE_TEST_API__?: ArcadeTestApi;
     __CAPTURED_CLIPBOARD_TEXT__?: string | null;
+    __LAST_RESET_TIMING__?: ResetTimingRecord;
   }
 }
 

@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import { FERMI_STAGE_EXPECTATIONS } from '../helpers/contracts.js';
 import {
   attachPageMonitors,
+  clickResetAndMeasureIdleMs,
   expectZeroAxeViolations,
   invokeTestApi,
   selectFermiHypothesisCards,
@@ -148,8 +149,11 @@ test.describe('Mode 2: FERMI BLASTER Acceptance Suite', () => {
     const trapNotesText = (await trapNotesEl.innerText()).trim();
     expect(trapNotesText.length).toBeGreaterThan(10);
 
+    await expect(page.getByTestId('fermi-retry-hint')).toBeVisible();
+
     const snap = await invokeTestApi(page, 'getSimulationSnapshot');
     expect(snap.fermiExplanation).not.toBeNull();
+    expect(snap.fermiExplanation!.showRetryHint).toBe(true);
     expect(snap.fermiExplanation!.baselineBreakdownText.ja.trim().length).toBeGreaterThanOrEqual(1);
     expect(snap.fermiExplanation!.trapNotes.length).toBeGreaterThanOrEqual(1);
     for (const note of snap.fermiExplanation!.trapNotes) {
@@ -157,16 +161,12 @@ test.describe('Mode 2: FERMI BLASTER Acceptance Suite', () => {
       expect(note.reason.ja.trim().length).toBeGreaterThanOrEqual(1);
     }
 
-    /* RESET 押下から 0.2秒（200ms）以内に ACT 1〜3 全スロット未選択・IDLE に戻る */
-    const resetBtn = page.getByTestId('fermi-reset-button');
-    const resetStartMs = await page.evaluate(() => window.performance.now());
-    await resetBtn.click();
-    await expect(page.getByTestId('fermi-result-status')).toHaveAttribute(
-      'data-status',
-      'IDLE',
-      { timeout: 200 },
+    /* RESET の click 発火時点（capture フェーズ）から 0.2秒（200ms）以内に ACT 1〜3 全スロット未選択・IDLE に戻る */
+    const resetElapsedMs = await clickResetAndMeasureIdleMs(
+      page,
+      'fermi-reset-button',
+      'fermi-result-status',
     );
-    const resetElapsedMs = (await page.evaluate(() => window.performance.now())) - resetStartMs;
     expect(resetElapsedMs).toBeLessThanOrEqual(200);
 
     const pressedCards = page.locator('button[data-testid^="fermi-card-act"][aria-pressed="true"]');
