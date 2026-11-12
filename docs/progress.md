@@ -16,3 +16,4 @@
 - 2026-11-12 001-arcade-core G2（受け入れテスト） PASS docs/reviews/001-arcade-core-G2-tests-reviewer-r2.md, docs/reviews/001-arcade-core-G2-tests-tech-lead-r2.md
 - 2026-11-12 001-arcade-core ステップ12 Takuma待ち .claude/org/app.json の web_build・web_test 設定待ち（CLAUDE.md）
 - 2026-11-12 001-arcade-core ステップ12 PASS .claude/org/app.json（PR #4 マージ・取り込み完了）
+- 2026-11-13 001-arcade-core G2（Web実装） PASS docs/reviews/001-arcade-core-G2-web-reviewer-r1.md
