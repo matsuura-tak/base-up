@@ -1,0 +1,2230 @@
+npm notice run logic-arcade-acceptance-tests@1.0.0 npx
+npm notice run 'playwright' test
+
+Running 66 tests using 5 workers
+
+  ✘   2 [chromium] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 (415ms)
+  ✘   3 [chromium] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 (411ms)
+  ✘   4 [chromium] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 (412ms)
+  ✘   1 [chromium] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 (445ms)
+  ✘   5 [chromium] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 (406ms)
+  ✘   7 [chromium] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 (220ms)
+  ✘   8 [chromium] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 (221ms)
+  ✘   9 [chromium] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 (229ms)
+  ✘  10 [chromium] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 (258ms)
+  ✘   6 [chromium] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 (228ms)
+  ✘  14 [chromium] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 (231ms)
+  ✘  11 [chromium] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 (238ms)
+  ✘  15 [chromium] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 (238ms)
+  ✘  12 [chromium] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 (254ms)
+  ✘  13 [chromium] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 (266ms)
+  ✘  17 [chromium] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 (242ms)
+  ✘  19 [chromium] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 (250ms)
+  ✘  18 [chromium] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 (250ms)
+  ✘  16 [chromium] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 (257ms)
+  ✘  20 [chromium] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 (255ms)
+  ✘  25 [firefox] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 (0ms)
+  ✘  22 [firefox] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 (0ms)
+  ✘  23 [firefox] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 (0ms)
+  ✘  21 [chromium] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 (140ms)
+  ✘  24 [chromium] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 (138ms)
+  ✘  26 [firefox] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 (1ms)
+  ✘  28 [firefox] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 (0ms)
+  ✘  27 [firefox] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 (0ms)
+  ✘  29 [firefox] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 (1ms)
+  ✘  31 [firefox] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 (1ms)
+  ✘  32 [firefox] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 (1ms)
+  ✘  30 [firefox] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 (0ms)
+  ✘  33 [firefox] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 (1ms)
+  ✘  34 [firefox] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 (1ms)
+  ✘  35 [firefox] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 (1ms)
+  ✘  37 [firefox] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 (1ms)
+  ✘  38 [firefox] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 (1ms)
+  ✘  39 [firefox] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 (1ms)
+  ✘  36 [firefox] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 (1ms)
+  ✘  40 [firefox] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 (1ms)
+  ✘  41 [firefox] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 (1ms)
+  ✘  42 [firefox] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 (1ms)
+  ✘  43 [firefox] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 (0ms)
+  ✘  44 [firefox] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 (1ms)
+  ✘  49 [webkit] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 (1.4s)
+  ✘  47 [webkit] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 (1.4s)
+  ✘  46 [webkit] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 (1.4s)
+  ✘  45 [webkit] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 (1.4s)
+  ✘  48 [webkit] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 (1.4s)
+  ✘  50 [webkit] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 (1.0s)
+  ✘  51 [webkit] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 (1.1s)
+  ✘  52 [webkit] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 (1.1s)
+  ✘  54 [webkit] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 (1.1s)
+  ✘  53 [webkit] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 (1.1s)
+  ✘  58 [webkit] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 (979ms)
+  ✘  55 [webkit] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 (986ms)
+  ✘  59 [webkit] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 (992ms)
+  ✘  57 [webkit] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 (999ms)
+  ✘  56 [webkit] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 (998ms)
+  ✘  63 [webkit] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 (975ms)
+  ✘  61 [webkit] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 (974ms)
+  ✘  60 [webkit] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 (978ms)
+  ✘  62 [webkit] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 (928ms)
+  ✘  64 [webkit] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 (1.0s)
+  ✘  66 [webkit] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 (535ms)
+  ✘  65 [webkit] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 (536ms)
+
+
+  1) [chromium] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      14 |     const monitors = attachPageMonitors(page);
+      15 |     const response = await page.goto('/combinator');
+    > 16 |     expect(response?.status()).toBe(200);
+         |                                ^
+      17 |
+      18 |     await expect(page.getByTestId('screen-combinator')).toBeVisible();
+      19 |     await expect(page).toHaveTitle('3-ACT COMBINATOR | LOGIC ARCADE');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:16:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      81 |     const monitors = attachPageMonitors(page);
+      82 |     const response = await page.goto('/combinator?stage=1');
+    > 83 |     expect(response?.status()).toBe(200);
+         |                                ^
+      84 |
+      85 |     await expect(page.getByTestId('combinator-simulation-canvas')).toBeVisible();
+      86 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:83:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      137 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      138 |     const response = await page.goto('/combinator?stage=1');
+    > 139 |     expect(response?.status()).toBe(200);
+          |                                ^
+      140 |
+      141 |     const audit = await invokeTestApi(page, 'auditAllStages');
+      142 |     expect(audit.combinatorStages).toHaveLength(10);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:139:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      189 |     const monitors = attachPageMonitors(page);
+      190 |     const response = await page.goto('/combinator?stage=1');
+    > 191 |     expect(response?.status()).toBe(200);
+          |                                ^
+      192 |
+      193 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+      194 |     await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:191:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      273 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      274 |     const response = await page.goto('/combinator?stage=1');
+    > 275 |     expect(response?.status()).toBe(200);
+          |                                ^
+      276 |
+      277 |     /* (a-1) エネルギー枯渇による CRASHED（STAGE 1, STEP 3 で ENERGY = -1 < 0） */
+      278 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-over']);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:275:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      52 |     /* モード1 STAGE 1 を1発クリア */
+      53 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 54 |     expect(resp1?.status()).toBe(200);
+         |                             ^
+      55 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+      56 |     await page.getByTestId('combinator-run-button').click();
+      57 |     await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:54:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      124 |     const monitors = attachPageMonitors(page);
+      125 |     const resp = await page.goto('/diagnostic');
+    > 126 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      127 |
+      128 |     const applySeedAndReload = async (seed: PersistedArcadeStateV1): Promise<void> => {
+      129 |       await page.evaluate(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:126:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      306 |
+      307 |     const response = await page.goto('/diagnostic');
+    > 308 |     expect(response?.status()).toBe(200);
+          |                                ^
+      309 |
+      310 |     const copyButton = page.getByTestId('diagnostic-copy-button');
+      311 |     await expect(copyButton).toBeEnabled();
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:308:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      342 |     /* パターン1：プレイ履歴 0件の初期状態 */
+      343 |     const resp = await page.goto('/diagnostic');
+    > 344 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      345 |     await expect(page.getByTestId('diagnostic-overall-rank')).toHaveAttribute(
+      346 |       'data-rank',
+      347 |       'UNRANKED',
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:344:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      493 |
+      494 |     const response = await page.goto('/diagnostic');
+    > 495 |     expect(response?.status()).toBe(200);
+          |                                ^
+      496 |
+      497 |     await page.getByTestId('diagnostic-copy-button').click();
+      498 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:495:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [chromium] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      14 |     const monitors = attachPageMonitors(page);
+      15 |     const response = await page.goto('/fermi');
+    > 16 |     expect(response?.status()).toBe(200);
+         |                                ^
+      17 |
+      18 |     await expect(page.getByTestId('screen-fermi')).toBeVisible();
+      19 |     await expect(page).toHaveTitle('FERMI BLASTER | LOGIC ARCADE');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:16:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [chromium] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      60 |     const monitors = attachPageMonitors(page);
+      61 |     const response = await page.goto('/fermi?stage=1');
+    > 62 |     expect(response?.status()).toBe(200);
+         |                                ^
+      63 |
+      64 |     await expect(page.getByTestId('fermi-simulation-canvas')).toBeVisible();
+      65 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:62:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [chromium] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      118 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      119 |     const response = await page.goto('/fermi?stage=1');
+    > 120 |     expect(response?.status()).toBe(200);
+          |                                ^
+      121 |
+      122 |     await selectFermiHypothesisCards(page, [1, 1, 2]);
+      123 |     await page.getByTestId('fermi-fire-button').click();
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:120:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [chromium] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      188 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      189 |     const response = await page.goto('/fermi?stage=1');
+    > 190 |     expect(response?.status()).toBe(200);
+          |                                ^
+      191 |
+      192 |     const audit = await invokeTestApi(page, 'auditAllStages');
+      193 |     expect(audit.allPassed).toBe(true);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:190:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [chromium] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      16 |     /* モード1（/combinator?stage=1）：0個・2個・1つ解除の各未充足状態 */
+      17 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 18 |     expect(resp1?.status()).toBe(200);
+         |                             ^
+      19 |
+      20 |     const runBtn = page.getByTestId('combinator-run-button');
+      21 |     const stepBtn = page.getByTestId('combinator-step-button');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:18:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [chromium] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      89 |
+      90 |     const response = await page.goto('/');
+    > 91 |     expect(response?.status()).toBe(200);
+         |                                ^
+      92 |     await expect(page.getByTestId('screen-lobby')).toBeVisible();
+      93 |
+      94 |     /* オフラインへ切り替え */
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:91:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [chromium] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      151 |
+      152 |     const response = await page.goto('/combinator?stage=1');
+    > 153 |     expect(response?.status()).toBe(200);
+          |                                ^
+      154 |
+      155 |     const soundToggle = page.getByTestId('header-sound-toggle');
+      156 |     const soundStateBadge = page.getByTestId('header-sound-state');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:153:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [chromium] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      234 |
+      235 |     const respA = await page.goto('/');
+    > 236 |     expect(respA?.status()).toBe(200);
+          |                             ^
+      237 |     await expect(page.getByTestId('storage-fallback-banner')).toHaveCount(1);
+      238 |     await expect(page.getByTestId('storage-fallback-banner')).toBeVisible();
+      239 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:236:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [chromium] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      324 |     /* モード1：CRASHED（通常ならシェイク対象）および STAGE CLEAR で 0px かつ <= 1.0秒完了を確認 */
+      325 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 326 |     expect(resp1?.status()).toBe(200);
+          |                             ^
+      327 |
+      328 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-over']);
+      329 |     const combCrashStartMs = await page.evaluate(() => window.performance.now());
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:326:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [chromium] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      131 |       for (const screen of TARGET_SCREENS) {
+      132 |         const resp = await page.goto(screen.path);
+    > 133 |         expect(resp?.status()).toBe(200);
+          |                                ^
+      134 |         await expect(page.getByTestId(screen.testId)).toBeVisible();
+      135 |
+      136 |         await page.evaluate((scalePct) => {
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/responsive-and-a11y.spec.ts:133:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [chromium] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      172 |
+      173 |     const resp = await page.goto('/');
+    > 174 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      175 |     await expect(page.getByTestId('screen-lobby')).toBeVisible();
+      176 |
+      177 |     /* 1. キーボードのみでトップからモード1 STAGE 1 を開く */
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/responsive-and-a11y.spec.ts:174:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [chromium] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      21 |     );
+      22 |     expect(headers['x-frame-options']).toBe('DENY');
+    > 23 |     expect(response!.status()).toBe(200);
+         |                                ^
+      24 |
+      25 |     await expect(page.getByTestId('screen-lobby')).toBeVisible({ timeout: 1000 });
+      26 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/shell-and-lobby.spec.ts:23:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [firefox] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-ditGeI -juggler-pipe -silent
+    <launched> pid=30015
+    [pid=30015][err] *** You are running in headless mode.
+    [pid=30015][err] Could not find profile folder.
+    [pid=30015] <process did exit: exitCode=1, signal=null>
+    [pid=30015] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-ditGeI -juggler-pipe -silent
+      - <launched> pid=30015
+      - [pid=30015][err] *** You are running in headless mode.
+      - [pid=30015][err] Could not find profile folder.
+      - [pid=30015] <process did exit: exitCode=1, signal=null>
+      - [pid=30015] starting temporary directories cleanup
+      - [pid=30015] <gracefully close start>
+      - [pid=30015] <kill>
+      - [pid=30015] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30015] finished temporary directories cleanup
+      - [pid=30015] <gracefully close end>
+
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [firefox] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-eZTjgK -juggler-pipe -silent
+    <launched> pid=30017
+    [pid=30017][err] *** You are running in headless mode.
+    [pid=30017][err] Could not find profile folder.
+    [pid=30017] <process did exit: exitCode=1, signal=null>
+    [pid=30017] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-eZTjgK -juggler-pipe -silent
+      - <launched> pid=30017
+      - [pid=30017][err] *** You are running in headless mode.
+      - [pid=30017][err] Could not find profile folder.
+      - [pid=30017] <process did exit: exitCode=1, signal=null>
+      - [pid=30017] starting temporary directories cleanup
+      - [pid=30017] <gracefully close start>
+      - [pid=30017] <kill>
+      - [pid=30017] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30017] finished temporary directories cleanup
+      - [pid=30017] <gracefully close end>
+
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [firefox] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-dmx9x7 -juggler-pipe -silent
+    <launched> pid=30018
+    [pid=30018][err] *** You are running in headless mode.
+    [pid=30018][err] Could not find profile folder.
+    [pid=30018] <process did exit: exitCode=1, signal=null>
+    [pid=30018] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-dmx9x7 -juggler-pipe -silent
+      - <launched> pid=30018
+      - [pid=30018][err] *** You are running in headless mode.
+      - [pid=30018][err] Could not find profile folder.
+      - [pid=30018] <process did exit: exitCode=1, signal=null>
+      - [pid=30018] starting temporary directories cleanup
+      - [pid=30018] <gracefully close start>
+      - [pid=30018] <kill>
+      - [pid=30018] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30018] finished temporary directories cleanup
+      - [pid=30018] <gracefully close end>
+
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [firefox] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-SrOMJZ -juggler-pipe -silent
+    <launched> pid=30031
+    [pid=30031][err] *** You are running in headless mode.
+    [pid=30031][err] Could not find profile folder.
+    [pid=30031] <process did exit: exitCode=1, signal=null>
+    [pid=30031] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-SrOMJZ -juggler-pipe -silent
+      - <launched> pid=30031
+      - [pid=30031][err] *** You are running in headless mode.
+      - [pid=30031][err] Could not find profile folder.
+      - [pid=30031] <process did exit: exitCode=1, signal=null>
+      - [pid=30031] starting temporary directories cleanup
+      - [pid=30031] <gracefully close start>
+      - [pid=30031] <kill>
+      - [pid=30031] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30031] finished temporary directories cleanup
+      - [pid=30031] <gracefully close end>
+
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  27) [firefox] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-wA93Zx -juggler-pipe -silent
+    <launched> pid=30032
+    [pid=30032][err] *** You are running in headless mode.
+    [pid=30032][err] Could not find profile folder.
+    [pid=30032] <process did exit: exitCode=1, signal=null>
+    [pid=30032] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-wA93Zx -juggler-pipe -silent
+      - <launched> pid=30032
+      - [pid=30032][err] *** You are running in headless mode.
+      - [pid=30032][err] Could not find profile folder.
+      - [pid=30032] <process did exit: exitCode=1, signal=null>
+      - [pid=30032] starting temporary directories cleanup
+      - [pid=30032] <gracefully close start>
+      - [pid=30032] <kill>
+      - [pid=30032] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30032] finished temporary directories cleanup
+      - [pid=30032] <gracefully close end>
+
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  28) [firefox] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-wtZ4NE -juggler-pipe -silent
+    <launched> pid=30035
+    [pid=30035][err] *** You are running in headless mode.
+    [pid=30035][err] Could not find profile folder.
+    [pid=30035] <process did exit: exitCode=1, signal=null>
+    [pid=30035] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-wtZ4NE -juggler-pipe -silent
+      - <launched> pid=30035
+      - [pid=30035][err] *** You are running in headless mode.
+      - [pid=30035][err] Could not find profile folder.
+      - [pid=30035] <process did exit: exitCode=1, signal=null>
+      - [pid=30035] starting temporary directories cleanup
+      - [pid=30035] <gracefully close start>
+      - [pid=30035] <kill>
+      - [pid=30035] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30035] finished temporary directories cleanup
+      - [pid=30035] <gracefully close end>
+
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  29) [firefox] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-CJLICC -juggler-pipe -silent
+    <launched> pid=30039
+    [pid=30039][err] *** You are running in headless mode.
+    [pid=30039][err] Could not find profile folder.
+    [pid=30039] <process did exit: exitCode=1, signal=null>
+    [pid=30039] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-CJLICC -juggler-pipe -silent
+      - <launched> pid=30039
+      - [pid=30039][err] *** You are running in headless mode.
+      - [pid=30039][err] Could not find profile folder.
+      - [pid=30039] <process did exit: exitCode=1, signal=null>
+      - [pid=30039] starting temporary directories cleanup
+      - [pid=30039] <gracefully close start>
+      - [pid=30039] <kill>
+      - [pid=30039] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30039] finished temporary directories cleanup
+      - [pid=30039] <gracefully close end>
+
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  30) [firefox] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-w6fjcZ -juggler-pipe -silent
+    <launched> pid=30038
+    [pid=30038][err] *** You are running in headless mode.
+    [pid=30038][err] Could not find profile folder.
+    [pid=30038] <process did exit: exitCode=1, signal=null>
+    [pid=30038] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-w6fjcZ -juggler-pipe -silent
+      - <launched> pid=30038
+      - [pid=30038][err] *** You are running in headless mode.
+      - [pid=30038][err] Could not find profile folder.
+      - [pid=30038] <process did exit: exitCode=1, signal=null>
+      - [pid=30038] starting temporary directories cleanup
+      - [pid=30038] <gracefully close start>
+      - [pid=30038] <kill>
+      - [pid=30038] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30038] finished temporary directories cleanup
+      - [pid=30038] <gracefully close end>
+
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  31) [firefox] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-BXSo7G -juggler-pipe -silent
+    <launched> pid=30043
+    [pid=30043][err] *** You are running in headless mode.
+    [pid=30043][err] Could not find profile folder.
+    [pid=30043] <process did exit: exitCode=1, signal=null>
+    [pid=30043] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-BXSo7G -juggler-pipe -silent
+      - <launched> pid=30043
+      - [pid=30043][err] *** You are running in headless mode.
+      - [pid=30043][err] Could not find profile folder.
+      - [pid=30043] <process did exit: exitCode=1, signal=null>
+      - [pid=30043] starting temporary directories cleanup
+      - [pid=30043] <gracefully close start>
+      - [pid=30043] <kill>
+      - [pid=30043] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30043] finished temporary directories cleanup
+      - [pid=30043] <gracefully close end>
+
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  32) [firefox] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-kiCpY9 -juggler-pipe -silent
+    <launched> pid=30045
+    [pid=30045][err] *** You are running in headless mode.
+    [pid=30045][err] Could not find profile folder.
+    [pid=30045] <process did exit: exitCode=1, signal=null>
+    [pid=30045] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-kiCpY9 -juggler-pipe -silent
+      - <launched> pid=30045
+      - [pid=30045][err] *** You are running in headless mode.
+      - [pid=30045][err] Could not find profile folder.
+      - [pid=30045] <process did exit: exitCode=1, signal=null>
+      - [pid=30045] starting temporary directories cleanup
+      - [pid=30045] <gracefully close start>
+      - [pid=30045] <kill>
+      - [pid=30045] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30045] finished temporary directories cleanup
+      - [pid=30045] <gracefully close end>
+
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  33) [firefox] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-sVj49e -juggler-pipe -silent
+    <launched> pid=30046
+    [pid=30046][err] *** You are running in headless mode.
+    [pid=30046][err] Could not find profile folder.
+    [pid=30046] <process did exit: exitCode=1, signal=null>
+    [pid=30046] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-sVj49e -juggler-pipe -silent
+      - <launched> pid=30046
+      - [pid=30046][err] *** You are running in headless mode.
+      - [pid=30046][err] Could not find profile folder.
+      - [pid=30046] <process did exit: exitCode=1, signal=null>
+      - [pid=30046] starting temporary directories cleanup
+      - [pid=30046] <gracefully close start>
+      - [pid=30046] <kill>
+      - [pid=30046] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30046] finished temporary directories cleanup
+      - [pid=30046] <gracefully close end>
+
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  34) [firefox] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-dTgQXn -juggler-pipe -silent
+    <launched> pid=30049
+    [pid=30049][err] *** You are running in headless mode.
+    [pid=30049][err] Could not find profile folder.
+    [pid=30049] <process did exit: exitCode=1, signal=null>
+    [pid=30049] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-dTgQXn -juggler-pipe -silent
+      - <launched> pid=30049
+      - [pid=30049][err] *** You are running in headless mode.
+      - [pid=30049][err] Could not find profile folder.
+      - [pid=30049] <process did exit: exitCode=1, signal=null>
+      - [pid=30049] starting temporary directories cleanup
+      - [pid=30049] <gracefully close start>
+      - [pid=30049] <kill>
+      - [pid=30049] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30049] finished temporary directories cleanup
+      - [pid=30049] <gracefully close end>
+
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  35) [firefox] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-63tcZY -juggler-pipe -silent
+    <launched> pid=30053
+    [pid=30053][err] *** You are running in headless mode.
+    [pid=30053][err] Could not find profile folder.
+    [pid=30053] <process did exit: exitCode=1, signal=null>
+    [pid=30053] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-63tcZY -juggler-pipe -silent
+      - <launched> pid=30053
+      - [pid=30053][err] *** You are running in headless mode.
+      - [pid=30053][err] Could not find profile folder.
+      - [pid=30053] <process did exit: exitCode=1, signal=null>
+      - [pid=30053] starting temporary directories cleanup
+      - [pid=30053] <gracefully close start>
+      - [pid=30053] <kill>
+      - [pid=30053] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30053] finished temporary directories cleanup
+      - [pid=30053] <gracefully close end>
+
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  36) [firefox] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-0q2Dyo -juggler-pipe -silent
+    <launched> pid=30058
+    [pid=30058][err] *** You are running in headless mode.
+    [pid=30058][err] Could not find profile folder.
+    [pid=30058] <process did exit: exitCode=1, signal=null>
+    [pid=30058] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-0q2Dyo -juggler-pipe -silent
+      - <launched> pid=30058
+      - [pid=30058][err] *** You are running in headless mode.
+      - [pid=30058][err] Could not find profile folder.
+      - [pid=30058] <process did exit: exitCode=1, signal=null>
+      - [pid=30058] starting temporary directories cleanup
+      - [pid=30058] <gracefully close start>
+      - [pid=30058] <kill>
+      - [pid=30058] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30058] finished temporary directories cleanup
+      - [pid=30058] <gracefully close end>
+
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  37) [firefox] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-qg51bg -juggler-pipe -silent
+    <launched> pid=30057
+    [pid=30057][err] *** You are running in headless mode.
+    [pid=30057][err] Could not find profile folder.
+    [pid=30057] <process did exit: exitCode=1, signal=null>
+    [pid=30057] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-qg51bg -juggler-pipe -silent
+      - <launched> pid=30057
+      - [pid=30057][err] *** You are running in headless mode.
+      - [pid=30057][err] Could not find profile folder.
+      - [pid=30057] <process did exit: exitCode=1, signal=null>
+      - [pid=30057] starting temporary directories cleanup
+      - [pid=30057] <gracefully close start>
+      - [pid=30057] <kill>
+      - [pid=30057] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30057] finished temporary directories cleanup
+      - [pid=30057] <gracefully close end>
+
+
+    Error Context: ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  38) [firefox] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-z35jbc -juggler-pipe -silent
+    <launched> pid=30060
+    [pid=30060][err] *** You are running in headless mode.
+    [pid=30060][err] Could not find profile folder.
+    [pid=30060] <process did exit: exitCode=1, signal=null>
+    [pid=30060] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-z35jbc -juggler-pipe -silent
+      - <launched> pid=30060
+      - [pid=30060][err] *** You are running in headless mode.
+      - [pid=30060][err] Could not find profile folder.
+      - [pid=30060] <process did exit: exitCode=1, signal=null>
+      - [pid=30060] starting temporary directories cleanup
+      - [pid=30060] <gracefully close start>
+      - [pid=30060] <kill>
+      - [pid=30060] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30060] finished temporary directories cleanup
+      - [pid=30060] <gracefully close end>
+
+
+    Error Context: ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  39) [firefox] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-ktTRkj -juggler-pipe -silent
+    <launched> pid=30064
+    [pid=30064][err] *** You are running in headless mode.
+    [pid=30064][err] Could not find profile folder.
+    [pid=30064] <process did exit: exitCode=1, signal=null>
+    [pid=30064] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-ktTRkj -juggler-pipe -silent
+      - <launched> pid=30064
+      - [pid=30064][err] *** You are running in headless mode.
+      - [pid=30064][err] Could not find profile folder.
+      - [pid=30064] <process did exit: exitCode=1, signal=null>
+      - [pid=30064] starting temporary directories cleanup
+      - [pid=30064] <gracefully close start>
+      - [pid=30064] <kill>
+      - [pid=30064] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30064] finished temporary directories cleanup
+      - [pid=30064] <gracefully close end>
+
+
+    Error Context: ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  40) [firefox] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-jyGhca -juggler-pipe -silent
+    <launched> pid=30069
+    [pid=30069][err] *** You are running in headless mode.
+    [pid=30069][err] Could not find profile folder.
+    [pid=30069] <process did exit: exitCode=1, signal=null>
+    [pid=30069] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-jyGhca -juggler-pipe -silent
+      - <launched> pid=30069
+      - [pid=30069][err] *** You are running in headless mode.
+      - [pid=30069][err] Could not find profile folder.
+      - [pid=30069] <process did exit: exitCode=1, signal=null>
+      - [pid=30069] starting temporary directories cleanup
+      - [pid=30069] <gracefully close start>
+      - [pid=30069] <kill>
+      - [pid=30069] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30069] finished temporary directories cleanup
+      - [pid=30069] <gracefully close end>
+
+
+    Error Context: ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  41) [firefox] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-E0onZS -juggler-pipe -silent
+    <launched> pid=30071
+    [pid=30071][err] *** You are running in headless mode.
+    [pid=30071][err] Could not find profile folder.
+    [pid=30071] <process did exit: exitCode=1, signal=null>
+    [pid=30071] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-E0onZS -juggler-pipe -silent
+      - <launched> pid=30071
+      - [pid=30071][err] *** You are running in headless mode.
+      - [pid=30071][err] Could not find profile folder.
+      - [pid=30071] <process did exit: exitCode=1, signal=null>
+      - [pid=30071] starting temporary directories cleanup
+      - [pid=30071] <gracefully close start>
+      - [pid=30071] <kill>
+      - [pid=30071] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30071] finished temporary directories cleanup
+      - [pid=30071] <gracefully close end>
+
+
+    Error Context: ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  42) [firefox] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-kDuG5t -juggler-pipe -silent
+    <launched> pid=30074
+    [pid=30074][err] *** You are running in headless mode.
+    [pid=30074][err] Could not find profile folder.
+    [pid=30074] <process did exit: exitCode=1, signal=null>
+    [pid=30074] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-kDuG5t -juggler-pipe -silent
+      - <launched> pid=30074
+      - [pid=30074][err] *** You are running in headless mode.
+      - [pid=30074][err] Could not find profile folder.
+      - [pid=30074] <process did exit: exitCode=1, signal=null>
+      - [pid=30074] starting temporary directories cleanup
+      - [pid=30074] <gracefully close start>
+      - [pid=30074] <kill>
+      - [pid=30074] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30074] finished temporary directories cleanup
+      - [pid=30074] <gracefully close end>
+
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  43) [firefox] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-fGGvLH -juggler-pipe -silent
+    <launched> pid=30076
+    [pid=30076][err] *** You are running in headless mode.
+    [pid=30076][err] Could not find profile folder.
+    [pid=30076] <process did exit: exitCode=1, signal=null>
+    [pid=30076] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-fGGvLH -juggler-pipe -silent
+      - <launched> pid=30076
+      - [pid=30076][err] *** You are running in headless mode.
+      - [pid=30076][err] Could not find profile folder.
+      - [pid=30076] <process did exit: exitCode=1, signal=null>
+      - [pid=30076] starting temporary directories cleanup
+      - [pid=30076] <gracefully close start>
+      - [pid=30076] <kill>
+      - [pid=30076] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30076] finished temporary directories cleanup
+      - [pid=30076] <gracefully close end>
+
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  44) [firefox] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-cdnHyl -juggler-pipe -silent
+    <launched> pid=30077
+    [pid=30077][err] *** You are running in headless mode.
+    [pid=30077][err] Could not find profile folder.
+    [pid=30077] <process did exit: exitCode=1, signal=null>
+    [pid=30077] starting temporary directories cleanup
+    Call log:
+      - <launching> /Users/takumamatsuura/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/q8/pb4r57zj60s00b7lv68l9d600000gn/T/playwright_firefoxdev_profile-cdnHyl -juggler-pipe -silent
+      - <launched> pid=30077
+      - [pid=30077][err] *** You are running in headless mode.
+      - [pid=30077][err] Could not find profile folder.
+      - [pid=30077] <process did exit: exitCode=1, signal=null>
+      - [pid=30077] starting temporary directories cleanup
+      - [pid=30077] <gracefully close start>
+      - [pid=30077] <kill>
+      - [pid=30077] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=30077] finished temporary directories cleanup
+      - [pid=30077] <gracefully close end>
+
+
+    Error Context: ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  45) [webkit] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      14 |     const monitors = attachPageMonitors(page);
+      15 |     const response = await page.goto('/combinator');
+    > 16 |     expect(response?.status()).toBe(200);
+         |                                ^
+      17 |
+      18 |     await expect(page.getByTestId('screen-combinator')).toBeVisible();
+      19 |     await expect(page).toHaveTitle('3-ACT COMBINATOR | LOGIC ARCADE');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:16:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-92336-から7個のユニークモジュール4属性・目標・暴走上限表示-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  46) [webkit] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      81 |     const monitors = attachPageMonitors(page);
+      82 |     const response = await page.goto('/combinator?stage=1');
+    > 83 |     expect(response?.status()).toBe(200);
+         |                                ^
+      84 |
+      85 |     await expect(page.getByTestId('combinator-simulation-canvas')).toBeVisible();
+      86 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:83:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e0082-ョン再生・STAGE-CLEARスコア算出・クリア記録-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  47) [webkit] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      137 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      138 |     const response = await page.goto('/combinator?stage=1');
+    > 139 |     expect(response?.status()).toBe(200);
+          |                                ^
+      140 |
+      141 |     const audit = await invokeTestApi(page, 'auditAllStages');
+      142 |     expect(audit.combinatorStages).toHaveLength(10);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:139:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-e1ac7-・50パーセント以下・ステージ8から10非自明性の保証-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  48) [webkit] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      189 |     const monitors = attachPageMonitors(page);
+      190 |     const response = await page.goto('/combinator?stage=1');
+    > 191 |     expect(response?.status()).toBe(200);
+          |                                ^
+      192 |
+      193 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+      194 |     await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:191:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-fb91c-行回数非加算とRESET0-2秒以内スロット維持初期化-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  49) [webkit] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      273 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      274 |     const response = await page.goto('/combinator?stage=1');
+    > 275 |     expect(response?.status()).toBe(200);
+          |                                ^
+      276 |
+      277 |     /* (a-1) エネルギー枯渇による CRASHED（STAGE 1, STEP 3 で ENERGY = -1 < 0） */
+      278 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-over']);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/combinator.spec.ts:275:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/combinator-Mode-1-3-ACT-CO-ac99f-走未達時のFAILED判定およびデバッグログ3項目表示-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  50) [webkit] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      52 |     /* モード1 STAGE 1 を1発クリア */
+      53 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 54 |     expect(resp1?.status()).toBe(200);
+         |                             ^
+      55 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-amp2b']);
+      56 |     await page.getByTestId('combinator-run-button').click();
+      57 |     await expect(page.getByTestId('combinator-result-status')).toHaveAttribute(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:54:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-b75ab-算出・正五角形レーダーチャート描画・総合認定ランク表示-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  51) [webkit] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      124 |     const monitors = attachPageMonitors(page);
+      125 |     const resp = await page.goto('/diagnostic');
+    > 126 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      127 |
+      128 |     const applySeedAndReload = async (seed: PersistedArcadeStateV1): Promise<void> => {
+      129 |       await page.evaluate(
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:126:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-ee9cb-Sプラス・S・B・Cランク境界値と5軸算出式の網羅検証-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  52) [webkit] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      306 |
+      307 |     const response = await page.goto('/diagnostic');
+    > 308 |     expect(response?.status()).toBe(200);
+          |                                ^
+      309 |
+      310 |     const copyButton = page.getByTestId('diagnostic-copy-button');
+      311 |     await expect(copyButton).toBeEnabled();
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:308:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-148ff-キストのクリップボード書き込みと2秒以上の完了通知表示-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  53) [webkit] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      342 |     /* パターン1：プレイ履歴 0件の初期状態 */
+      343 |     const resp = await page.goto('/diagnostic');
+    > 344 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      345 |     await expect(page.getByTestId('diagnostic-overall-rank')).toHaveAttribute(
+      346 |       'data-rank',
+      347 |       'UNRANKED',
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:344:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-3e5de-・片モードのみクリア）のUNRANKED表示と開始導線-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  54) [webkit] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      493 |
+      494 |     const response = await page.goto('/diagnostic');
+    > 495 |     expect(response?.status()).toBe(200);
+          |                                ^
+      496 |
+      497 |     await page.getByTestId('diagnostic-copy-button').click();
+      498 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/diagnostic.spec.ts:495:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/diagnostic-Screen-4-Diagno-5394a-および未定義時の失敗通知と手動コピー用テキスト領域展開-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  55) [webkit] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      14 |     const monitors = attachPageMonitors(page);
+      15 |     const response = await page.goto('/fermi');
+    > 16 |     expect(response?.status()).toBe(200);
+         |                                ^
+      17 |
+      18 |     await expect(page.getByTestId('screen-fermi')).toBeVisible();
+      19 |     await expect(page).toHaveTitle('FERMI BLASTER | LOGIC ARCADE');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:16:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-c959e-3スロット各3から4枚の仮説カード選択・自由入力欄0件-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  56) [webkit] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      60 |     const monitors = attachPageMonitors(page);
+      61 |     const response = await page.goto('/fermi?stage=1');
+    > 62 |     expect(response?.status()).toBe(200);
+         |                                ^
+      63 |
+      64 |     await expect(page.getByTestId('fermi-simulation-canvas')).toBeVisible();
+      65 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:62:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-d90e3-と対数誤差・罠有無による4段階オーダー判定・クリア記録-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  57) [webkit] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      118 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      119 |     const response = await page.goto('/fermi?stage=1');
+    > 120 |     expect(response?.status()).toBe(200);
+          |                                ^
+      121 |
+      122 |     await selectFermiHypothesisCards(page, [1, 1, 2]);
+      123 |     await page.getByTestId('fermi-fire-button').click();
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:120:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-88d7f-項目表示とRESET0-2秒以内全スロット未選択初期化-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  58) [webkit] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      188 |     await page.emulateMedia({ reducedMotion: 'reduce' });
+      189 |     const response = await page.goto('/fermi?stage=1');
+    > 190 |     expect(response?.status()).toBe(200);
+          |                                ^
+      191 |
+      192 |     const audit = await invokeTestApi(page, 'auditAllStages');
+      193 |     expect(audit.allPassed).toBe(true);
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/fermi.spec.ts:190:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/fermi-Mode-2-FERMI-BLASTER-82e8f-解存在・50パーセント以下・罠カード1枚以上配置の保証-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  59) [webkit] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      16 |     /* モード1（/combinator?stage=1）：0個・2個・1つ解除の各未充足状態 */
+      17 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 18 |     expect(resp1?.status()).toBe(200);
+         |                             ^
+      19 |
+      20 |     const runBtn = page.getByTestId('combinator-run-button');
+      21 |     const stepBtn = page.getByTestId('combinator-step-button');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:18:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-e860b-sabled化・未配置スロット案内文・試行回数0回保証-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  60) [webkit] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      89 |
+      90 |     const response = await page.goto('/');
+    > 91 |     expect(response?.status()).toBe(200);
+         |                                ^
+      92 |     await expect(page.getByTestId('screen-lobby')).toBeVisible();
+      93 |
+      94 |     /* オフラインへ切り替え */
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:91:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-0df48-通信0件・リロード後のlocalStorage履歴復元-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  61) [webkit] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      151 |
+      152 |     const response = await page.goto('/combinator?stage=1');
+    > 153 |     expect(response?.status()).toBe(200);
+          |                                ^
+      154 |
+      155 |     const soundToggle = page.getByTestId('header-sound-toggle');
+      156 |     const soundStateBadge = page.getByTestId('header-sound-state');
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:153:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-a5a78-0件・SOUND-OFFゲイン0抑止とリロード後永続化-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  62) [webkit] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      234 |
+      235 |     const respA = await page.goto('/');
+    > 236 |     expect(respA?.status()).toBe(200);
+          |                             ^
+      237 |     await expect(page.getByTestId('storage-fallback-banner')).toHaveCount(1);
+      238 |     await expect(page.getByTestId('storage-fallback-banner')).toBeVisible();
+      239 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:236:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-57260-リ退避バナー表示および破損JSON時の安全な破棄再記録-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  63) [webkit] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      324 |     /* モード1：CRASHED（通常ならシェイク対象）および STAGE CLEAR で 0px かつ <= 1.0秒完了を確認 */
+      325 |     const resp1 = await page.goto('/combinator?stage=1');
+    > 326 |     expect(resp1?.status()).toBe(200);
+          |                             ^
+      327 |
+      328 |     await assignCombinatorModules(page, ['s1-seed', 's1-amp2', 's1-over']);
+      329 |     const combCrashStartMs = await page.evaluate(() => window.performance.now());
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/resilience-and-media.spec.ts:326:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/resilience-and-media-Resil-ee6b1-画面シェイク変位0px抑止と1-0秒以内の短縮再生完了-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  64) [webkit] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      131 |       for (const screen of TARGET_SCREENS) {
+      132 |         const resp = await page.goto(screen.path);
+    > 133 |         expect(resp?.status()).toBe(200);
+          |                                ^
+      134 |         await expect(page.getByTestId(screen.testId)).toBeVisible();
+      135 |
+      136 |         await page.evaluate((scalePct) => {
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/responsive-and-a11y.spec.ts:133:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-3bc0b-0px・最小24x24px・重なり0件・axe違反0件-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  65) [webkit] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      172 |
+      173 |     const resp = await page.goto('/');
+    > 174 |     expect(resp?.status()).toBe(200);
+          |                            ^
+      175 |     await expect(page.getByTestId('screen-lobby')).toBeVisible();
+      176 |
+      177 |     /* 1. キーボードのみでトップからモード1 STAGE 1 を開く */
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/responsive-and-a11y.spec.ts:174:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/responsive-and-a11y-Respon-b27c6-みでの両モードステージクリアと診断カルテ共有までの完走-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  66) [webkit] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      21 |     );
+      22 |     expect(headers['x-frame-options']).toBe('DENY');
+    > 23 |     expect(response!.status()).toBe(200);
+         |                                ^
+      24 |
+      25 |     await expect(page.getByTestId('screen-lobby')).toBeVisible({ timeout: 1000 });
+      26 |
+        at /Users/takumamatsuura/src/base-up/web/tests/acceptance/specs/shell-and-lobby.spec.ts:23:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/shell-and-lobby-Shell-and--43807-ンでない3導線の即時提示および言語切替・404案内検証-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  66 failed
+    [chromium] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+    [chromium] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+    [chromium] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+    [chromium] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+    [chromium] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+    [chromium] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+    [chromium] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+    [chromium] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+    [chromium] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+    [chromium] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+    [chromium] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+    [chromium] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+    [chromium] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+    [chromium] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+    [chromium] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+    [chromium] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+    [chromium] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+    [chromium] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+    [chromium] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+    [chromium] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+    [chromium] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+    [chromium] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
+    [firefox] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+    [firefox] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+    [firefox] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+    [firefox] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+    [firefox] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+    [firefox] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+    [firefox] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+    [firefox] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+    [firefox] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+    [firefox] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+    [firefox] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+    [firefox] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+    [firefox] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+    [firefox] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+    [firefox] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+    [firefox] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+    [firefox] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+    [firefox] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+    [firefox] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+    [firefox] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+    [firefox] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+    [firefox] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
+    [webkit] › specs/combinator.spec.ts:11:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-2 / AC2_モード1全10ステージ選択と5から7個のユニークモジュール4属性・目標・暴走上限表示 
+    [webkit] › specs/combinator.spec.ts:78:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-3 / AC3_モード1の3ステップ配置とRUN3秒以内シミュレーション再生・STAGE_CLEARスコア算出・クリア記録 
+    [webkit] › specs/combinator.spec.ts:133:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-4 / AC4_モード1全10ステージの全順列解存在・50パーセント以下・ステージ8から10非自明性の保証 
+    [webkit] › specs/combinator.spec.ts:186:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-5 / AC5_モード1のSTEP1手検証による試行回数非加算とRESET0.2秒以内スロット維持初期化 
+    [webkit] › specs/combinator.spec.ts:269:3 › Mode 1: 3-ACT COMBINATOR Acceptance Suite › AC-6 / AC6_モード1途中制約違反時のCRASHED中断と完走未達時のFAILED判定およびデバッグログ3項目表示 
+    [webkit] › specs/diagnostic.spec.ts:46:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_両モードクリア後の5軸整数スコア算出・正五角形レーダーチャート描画・総合認定ランク表示 
+    [webkit] › specs/diagnostic.spec.ts:121:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-10 / AC10_思考力診断カルテのSプラス・S・B・Cランク境界値と5軸算出式の網羅検証 
+    [webkit] › specs/diagnostic.spec.ts:279:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-11 / AC11_思考力診断カルテの結果サマリーテキストのクリップボード書き込みと2秒以上の完了通知表示 
+    [webkit] › specs/diagnostic.spec.ts:337:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-12 / AC12_認定ランク未解放3パターン（履歴0件・失敗のみ・片モードのみクリア）のUNRANKED表示と開始導線 
+    [webkit] › specs/diagnostic.spec.ts:475:3 › Screen 4: Diagnostic Chart Acceptance Suite › AC-20 / AC20_クリップボード書き込み拒否および未定義時の失敗通知と手動コピー用テキスト領域展開 
+    [webkit] › specs/fermi.spec.ts:11:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-7 / AC7_モード2全9ステージ（初級3・中級3・上級3）と3スロット各3から4枚の仮説カード選択・自由入力欄0件 
+    [webkit] › specs/fermi.spec.ts:57:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-8 / AC8_モード2のFIRE3秒以内視覚シミュレーションと対数誤差・罠有無による4段階オーダー判定・クリア記録 
+    [webkit] › specs/fermi.spec.ts:114:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-9 / AC9_モード2の基準因数分解式・罠カード解説3項目表示とRESET0.2秒以内全スロット未選択初期化 
+    [webkit] › specs/fermi.spec.ts:184:3 › Mode 2: FERMI BLASTER Acceptance Suite › AC-19 / AC19_モード2全9ステージの全組み合わせPERFECT_ORDER解存在・50パーセント以下・罠カード1枚以上配置の保証 
+    [webkit] › specs/resilience-and-media.spec.ts:11:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-13 / AC13_モード1およびモード2のスロット未充足時の実行ボタンdisabled化・未配置スロット案内文・試行回数0回保証 
+    [webkit] › specs/resilience-and-media.spec.ts:83:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-14 / AC14_初期読み込み後の完全オフライン両モードクリア・外部通信0件・リロード後のlocalStorage履歴復元 
+    [webkit] › specs/resilience-and-media.spec.ts:146:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-15 / AC15_Web_Audioシンセ効果音発音・外部音声通信0件・SOUND_OFFゲイン0抑止とリロード後永続化 
+    [webkit] › specs/resilience-and-media.spec.ts:219:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-16 / AC16_localStorageアクセス例外時のインメモリ退避バナー表示および破損JSON時の安全な破棄再記録 
+    [webkit] › specs/resilience-and-media.spec.ts:318:3 › Resilience, Offline, Storage, Audio & Motion Acceptance Suite › AC-17 / AC17_prefers_reduced_motion有効時の画面シェイク変位0px抑止と1.0秒以内の短縮再生完了 
+    [webkit] › specs/responsive-and-a11y.spec.ts:95:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_320pxと1280pxおよび文字拡大100パーセント・200パーセント全4条件×全4画面の横はみ出し0px・最小24x24px・重なり0件・axe違反0件 
+    [webkit] › specs/responsive-and-a11y.spec.ts:155:3 › Responsive Reflow, Target Size, Axe & Keyboard-Only Acceptance Suite › AC-18 / AC18_キーボード操作（TabとEnter）のみでの両モードステージクリアと診断カルテ共有までの完走 
+    [webkit] › specs/shell-and-lobby.spec.ts:8:3 › Shell and Lobby Acceptance Suite › AC-1 / AC1_初期表示と迷路クローンでない3導線の即時提示および言語切替・404案内検証 
