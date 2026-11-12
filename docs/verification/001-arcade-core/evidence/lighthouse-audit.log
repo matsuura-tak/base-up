@@ -1,0 +1,4 @@
+Lighthouse (/): Performance=100, Accessibility=100, LCP=902ms, TBT=0ms, CLS=0
+Lighthouse (/combinator?stage=1): Performance=100, Accessibility=100, LCP=901ms, TBT=0ms, CLS=0
+Lighthouse (/fermi?stage=1): Performance=100, Accessibility=100, LCP=901ms, TBT=0ms, CLS=0
+Lighthouse (/diagnostic): Performance=100, Accessibility=100, LCP=902ms, TBT=0ms, CLS=0
