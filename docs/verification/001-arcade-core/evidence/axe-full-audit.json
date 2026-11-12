@@ -1,5 +1,5 @@
 {
-  "auditedAt": "2026-11-12T15:29:32.295Z",
+  "auditedAt": "2026-11-12T17:05:25.942Z",
   "axeTags": [
     "wcag2a",
     "wcag2aa",
@@ -50,7 +50,7 @@
     },
     {
       "fileName": "lobby_normal_zoom200.png",
-      "bytes": 311690,
+      "bytes": 321066,
       "screen": "画面1：モード選択（/）",
       "state": "通常（進捗 1/10・1/9・ランク A）",
       "variant": "文字拡大200%（1280px・200%・ja）",
@@ -68,7 +68,7 @@
     },
     {
       "fileName": "lobby_normal_en.png",
-      "bytes": 112287,
+      "bytes": 111752,
       "screen": "画面1：モード選択（/）",
       "state": "通常（進捗 1/10・1/9・ランク A）",
       "variant": "英語（1280px・100%・en）",
@@ -104,7 +104,7 @@
     },
     {
       "fileName": "combinator_normal_light.png",
-      "bytes": 258313,
+      "bytes": 261432,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "通常（STAGE 1・3スロット配置済・RUN活性）",
       "variant": "ライト（1280px・100%・ja）",
@@ -122,7 +122,7 @@
     },
     {
       "fileName": "combinator_normal_dark.png",
-      "bytes": 260387,
+      "bytes": 263525,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "通常（STAGE 1・3スロット配置済・RUN活性）",
       "variant": "ダーク（1280px・100%・ja）",
@@ -140,7 +140,7 @@
     },
     {
       "fileName": "combinator_normal_zoom200.png",
-      "bytes": 520004,
+      "bytes": 531439,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "通常（STAGE 1・3スロット配置済・RUN活性）",
       "variant": "文字拡大200%（1280px・200%・ja）",
@@ -158,7 +158,7 @@
     },
     {
       "fileName": "combinator_normal_en.png",
-      "bytes": 221641,
+      "bytes": 220839,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "通常（STAGE 1・3スロット配置済・RUN活性）",
       "variant": "英語（1280px・100%・en）",
@@ -176,7 +176,7 @@
     },
     {
       "fileName": "combinator_normal_mobile.png",
-      "bytes": 247774,
+      "bytes": 251460,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "通常（STAGE 1・3スロット配置済・RUN活性）",
       "variant": "スマホ幅（320px・100%・ja）",
@@ -230,7 +230,7 @@
     },
     {
       "fileName": "fermi_normal_zoom200.png",
-      "bytes": 364711,
+      "bytes": 359679,
       "screen": "画面3：モード2『FERMI BLASTER』（/fermi）",
       "state": "通常（STAGE 1・3スロット選択済・FIRE活性）",
       "variant": "文字拡大200%（1280px・200%・ja）",
@@ -248,7 +248,7 @@
     },
     {
       "fileName": "fermi_normal_en.png",
-      "bytes": 167273,
+      "bytes": 167326,
       "screen": "画面3：モード2『FERMI BLASTER』（/fermi）",
       "state": "通常（STAGE 1・3スロット選択済・FIRE活性）",
       "variant": "英語（1280px・100%・en）",
@@ -338,7 +338,7 @@
     },
     {
       "fileName": "diagnostic_normal_en.png",
-      "bytes": 103233,
+      "bytes": 102734,
       "screen": "画面4：『思考力診断カルテ』（/diagnostic）",
       "state": "通常（ランク A 解放・5軸チャート・コピー活性）",
       "variant": "英語（1280px・100%・en）",
@@ -410,7 +410,7 @@
     },
     {
       "fileName": "combinator_empty_light.png",
-      "bytes": 250372,
+      "bytes": 253679,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "空・エラー（スロット未配置・未配置スロット案内・RUN/STEP disabled）",
       "variant": "ライト",
@@ -428,7 +428,7 @@
     },
     {
       "fileName": "combinator_stepping_light.png",
-      "bytes": 260782,
+      "bytes": 264016,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "検証一時停止中（STEPPING 1/3・試行回数非加算）",
       "variant": "ライト",
@@ -446,7 +446,7 @@
     },
     {
       "fileName": "combinator_running_light.png",
-      "bytes": 262852,
+      "bytes": 266273,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "読み込み中／実行中（RUNNING 再生中・二重実行防止 disabled）",
       "variant": "ライト",
@@ -464,7 +464,7 @@
     },
     {
       "fileName": "AC3_STAGE_CLEAR.png",
-      "bytes": 267189,
+      "bytes": 270330,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "クリア達成（STAGE CLEAR・スコア 1105 pt・S1 CLEAR 記録）",
       "variant": "ライト",
@@ -482,7 +482,7 @@
     },
     {
       "fileName": "AC6_CRASHED.png",
-      "bytes": 300333,
+      "bytes": 303443,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "エラー（CRASHED・STEP 3 エネルギー枯渇・デバッグログ3項目表示）",
       "variant": "ライト",
@@ -500,7 +500,7 @@
     },
     {
       "fileName": "AC6_FAILED.png",
-      "bytes": 301000,
+      "bytes": 304192,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator）",
       "state": "エラー（FAILED・FINAL CHECK ターゲット未達・デバッグログ3項目表示）",
       "variant": "ライト",
@@ -518,7 +518,7 @@
     },
     {
       "fileName": "combinator_stage_fallback_light.png",
-      "bytes": 267887,
+      "bytes": 271216,
       "screen": "画面2：モード1『3-ACT COMBINATOR』（/combinator?stage=99）",
       "state": "エラー（範囲外 ?stage=99 指定時の STAGE 1 安全補正＋stage-fallback-notice）",
       "variant": "ライト",
@@ -662,7 +662,7 @@
     },
     {
       "fileName": "AC12_UNRANKED.png",
-      "bytes": 157340,
+      "bytes": 158115,
       "screen": "画面4：『思考力診断カルテ』（/diagnostic）",
       "state": "空（認定ランク未解放パターン1：履歴0件・UNRANKED・全軸0・両モード開始導線）",
       "variant": "ライト",
@@ -680,7 +680,7 @@
     },
     {
       "fileName": "diagnostic_unranked_failed_only_light.png",
-      "bytes": 157340,
+      "bytes": 158115,
       "screen": "画面4：『思考力診断カルテ』（/diagnostic）",
       "state": "空（認定ランク未解放パターン2：失敗履歴のみ・クリア0件・UNRANKED・全軸0）",
       "variant": "ライト",
@@ -698,7 +698,7 @@
     },
     {
       "fileName": "diagnostic_unranked_partial_light.png",
-      "bytes": 145561,
+      "bytes": 145876,
       "screen": "画面4：『思考力診断カルテ』（/diagnostic）",
       "state": "一部だけ読めたとき（認定ランク未解放パターン3：モード1のみクリア・UNRANKED・片側軸算出）",
       "variant": "ライト",
